@@ -1,0 +1,19 @@
+O:8:"stdClass":4:{s:3:"cid";s:58:"hrm_congress:block:output:a05e5e8d4e05e9982b58140e2930b098";s:7:"created";i:1516083761;s:6:"expire";i:1516105381;s:4:"data";a:5:{s:4:"head";a:3:{s:24:"system_meta_content_type";a:4:{s:5:"#type";s:8:"html_tag";s:4:"#tag";s:4:"meta";s:11:"#attributes";a:2:{s:10:"http-equiv";s:12:"Content-Type";s:7:"content";s:24:"text/html; charset=utf-8";}s:7:"#weight";i:-1000;}s:21:"system_meta_generator";a:4:{s:5:"#type";s:8:"html_tag";s:4:"#tag";s:4:"meta";s:11:"#attributes";a:2:{s:4:"name";s:9:"Generator";s:7:"content";s:28:"Drupal 7 (http://drupal.org)";}s:9:"#attached";a:1:{s:22:"drupal_add_http_header";a:1:{i:0;a:2:{i:0;s:11:"X-Generator";i:1;s:28:"Drupal 7 (http://drupal.org)";}}}}s:68:"drupal_add_html_head_link:alternate:http://localhost/hrmasia/rss.xml";a:3:{s:4:"#tag";s:4:"link";s:11:"#attributes";a:4:{s:3:"rel";s:9:"alternate";s:4:"type";s:19:"application/rss+xml";s:5:"title";s:11:"hrmasia RSS";s:4:"href";s:32:"http://localhost/hrmasia/rss.xml";}s:5:"#type";s:8:"html_tag";}}s:3:"css";a:0:{}s:2:"js";a:1:{s:8:"settings";a:0:{}}s:7:"headers";a:0:{}s:6:"output";s:394:"
+
+<!-- THEME DEBUG -->
+<!-- CALL: theme('views_view') -->
+<!-- BEGIN OUTPUT from 'sites/all/modules/views/theme/views-view.tpl.php' -->
+<div class="view view-hrm-congress view-id-hrm_congress view-display-id-block homepage-blocks view-dom-id-5c0eb0dbac79c080fa89e78ae9468a12">
+        
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+<!-- END OUTPUT from 'sites/all/modules/views/theme/views-view.tpl.php' -->
+
+";}}

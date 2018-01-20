@@ -1,0 +1,148 @@
+ /*-----------Mainmenu---------------*/
+
+#block-tb-megamenu-main-menu{
+    .tb-megamenu{
+        background: none;
+    }
+    ul.tb-megamenu-nav{
+
+        text-align: right;
+        li.tb-megamenu-item{
+            border-right:1px solid #e8e8e8;
+            font-size: 12px;
+            @include fontfamilyversionfive;
+            text-transform: uppercase;
+            width: 12.33830845%;
+            max-width: 124px;
+            text-align: left;
+            line-height: 16px;
+            &.first{
+                border-left:1px solid #e8e8e8;
+            }
+            a{
+                display: block;
+                color: $EAC014;
+                border:none;
+                padding:20px 4px 17px 51px;
+
+                &:hover{
+                    color: $EAC011;
+
+                }
+            }
+            &.article{
+                a.dropdown-toggle{
+                    background:url(../images/icon/icon-article.png) no-repeat 10px 10px;
+                    &:hover{
+                        background:$M001 url(../images/icon/icon-article.png) no-repeat 10px 10px;
+                    }
+                }
+            }
+            &.events{
+                a{
+                    background:url(../images/icon/icon-events.png) no-repeat 10px 10px;
+                    padding:13px 4px 8px 51px;
+
+                    &:hover{
+                        background:$M002 url(../images/icon/icon-events.png) no-repeat 10px 10px;
+                    }
+                }
+            }
+            &.news{
+                a{
+                    background:url(../images/icon/icon-news.png) no-repeat 10px 10px;
+                    &:hover{
+                        background:$M003 url(../images/icon/icon-news.png) no-repeat 10px 10px ;
+
+                    }
+                }
+            }
+
+            &.jobs{
+                a{
+                    background:url(../images/icon/icon-jobs.png) no-repeat 10px 10px;
+                    &:hover{
+                        background:$M004 url(../images/icon/icon-jobs.png) no-repeat 10px 10px;
+                    }
+                }
+            }
+            &.courses{
+                a{
+                    background:url(../images/icon/icon-courses.png) no-repeat 10px 10px;
+                    &:hover{
+                        background:$M005 url(../images/icon/icon-courses.png) no-repeat 10px 10px;
+                    }
+                }
+            }
+            &.hrmtv{
+                a{
+                    background:url(../images/icon/icon-hrmtv.png) no-repeat 10px 10px;
+                    &:hover{
+                        background:$M006 url(../images/icon/icon-hrmtv.png) no-repeat 10px 10px;
+                    }
+                }
+            }
+            &.contactus{
+                a{
+                    background:url(../images/icon/icon-contact.png) no-repeat 10px 10px;
+                    padding:13px 4px 8px 51px;
+                    &:hover{
+                        background:$M007 url(../images/icon/icon-contact.png) no-repeat 10px 10px;
+                    }
+                }
+            }
+            &.subscribe{
+                a{
+                    background:url(../images/icon/icon-subscribe.png) no-repeat 10px 10px;
+                    &:hover{
+                        background:$M008 url(../images/icon/icon-subscribe.png) no-repeat 10px 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*---------------Megamenu Deisgn---------------*/
+
+#block-tb-megamenu-main-menu{
+    li.tb-megamenu-item{
+    .tb-megamenu-submenu{
+        border: none;
+        box-shadow: none;
+        background: $EAC019;
+        color: $EAC011;
+        margin-top: 1px;
+    }
+    .view-filter-article{
+        h3{
+            @include fontfamilyversiontwo;
+            font-size: 12px;
+            text-transform: uppercase;
+            a{
+                color: $EAC014;
+                white-space:normal !important;
+                 padding: 0 !important;
+                &:hover{
+                    color: $EAC014;
+                }
+            }
+        }
+
+        .item-list{
+            width: 18%;
+            margin-right: 2%;
+            float: left;
+            font-size: 12px;
+            margin-bottom: 20px;
+            ul li a{
+                 @include fontfamilyversionthree;
+                color: $EAC002 !important;
+            padding: 0 !important;
+            font-size: 12px;
+            text-transform: none !important;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,1 @@
+O:8:"stdClass":4:{s:3:"cid";s:33:"ctools_export:metatag_config:user";s:7:"created";i:1516083761;s:6:"expire";i:0;s:4:"data";O:8:"stdClass":5:{s:8:"instance";s:4:"user";s:11:"api_version";i:1;s:8:"disabled";b:0;s:6:"config";a:1:{s:5:"title";a:1:{s:5:"value";s:25:"[user:name] | [site:name]";}}s:13:"export_module";s:7:"metatag";}}

@@ -1,0 +1,5 @@
+ name = Mini Carousel
+description = Create custom block for carousel.
+package = Custom
+core = 7.x
+version = "7.x-1.0"

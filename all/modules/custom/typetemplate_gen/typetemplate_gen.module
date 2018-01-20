@@ -1,0 +1,154 @@
+<?php
+
+function typetemplate_gen_menu(){
+// Make "Tab 1" the main tab on the "Foo settings" page
+$items = array();
+
+$items['types/template/genarator'] = array(
+  'title' => 'content types',
+    'type' => MENU_NORMAL_ITEM,
+    'page callback' => 'typetemplate_gen_listing',
+    'access callback' => true
+    // Access callback, page callback, and theme callback will be inherited
+    // from 'admin/config/system/foo', if not specified here to override.
+);
+
+
+$items['types/template/genarator/%'] = array(
+  //'title' => 'Tab 1',
+    'type' => MENU_NORMAL_ITEM,
+    'page callback' => 'typetemplate_gen_design_pane',
+    'page arguments' => array(3),
+    'access callback' => true
+    // Access callback, page callback, and theme callback will be inherited
+    // from 'admin/config/system/foo', if not specified here to override.
+);
+
+
+//die();
+  return $items;
+}
+
+function typetemplate_gen_listing(){
+ global $base_url;
+ $links_li = array();
+	foreach (node_type_get_names() as $type => $name) {
+    $type_name = str_replace('_', '-', $type);
+    $links_li[] = array(
+    'href'  => $base_url."/types/template/genarator/".$type_name,
+    'title' => $type_name,
+  );
+  }
+  return theme('links', array(
+      'links' => $links_li,
+      'attributes' => array('class' => array('links')),
+    ));
+}
+
+
+
+function typetemplate_gen_entity_info_alter(&$entity_info){
+
+  $entity_info['node']['view modes']['another_teaser'] = array(
+    'label' => t('Another teaser'),
+    'custom settings' => TRUE,
+  );
+	
+   
+}
+
+function typetemplate_gen_design_pane($type){
+  $type_name = str_replace('-', '_', $type);
+  $contents = $type_name;
+  $fields_info = field_info_instances("node", $type);
+  //dpm($fields_info);
+  //$nameandtype_list = array();
+  foreach ($fields_info as $field_name => $value) {
+    //print_r($field_name);
+    //die();
+
+    $field_info = field_info_field($field_name);
+    $field_type = $field_info['type'];
+    $nameandtype_list[$field_name] = $field_type;
+    //dpm($field_info);
+    //die();
+      //echo "The type is $type, duh.";
+     //$contents .= field_get_items("node", $type_name, $field_name);
+    }
+  //return $contents;
+  return theme('typetemplate_gen_template', array('field_type'=>$nameandtype_list));
+}
+
+
+function typetemplate_gen_theme($existing, $type, $theme, $path) {
+  if($type == 'module') {
+    return array(
+      'typetemplate_gen_template' => array(
+        'variables' => array('field_type'=>NULL, 'field_name' => NULL),
+        'template' => 'typetemplate-gen-template'
+      ),
+    );
+  }
+  return array(); //will raise fatal error if void
+}
+
+function typetemplate_gen_init(){
+  drupal_add_css(drupal_get_path('module', 'typetemplate_gen').'/css/demo.css');
+  drupal_add_css(drupal_get_path('module', 'typetemplate_gen').'/css/jquery.css');
+  drupal_add_js(drupal_get_path('module', 'typetemplate_gen').'/js/jquery.js');
+}
+
+/*function typetemplate_gen_preprocess_node(&$vars) {
+  if($vars['view_mode'] == 'another_teaser') {
+    $vars['theme_hook_suggestions'][] = 'node__' . $vars['type'] . '__another_teaser';
+  }
+} 
+
+
+function typetemplate_gen_menu_alter(&$items) { 
+  $items['admin/structure/types/manage/%typetemplate_gen_node_type/display1']['title'] = 'ty display';
+  $items['admin/structure/types/manage/%typetemplate_gen_node_type/display1']['weight'] = 4;
+//}
+}
+
+function typetemplate_gen_node_type_load($name) {
+  if ($type = node_type_get_type(strtr($name, array('-' => '_')))) {
+    return 'typetemplate_gen_node_' . $type->type;
+  }
+}*/
+
+/*function typetemplate_gen_entity_view( $entity, $type, $view_mode, $langcode ) {
+	//dpm($entity);
+  $fields_info = field_info_instances("node", $entity->type);
+  //dpm($fields_info);
+    foreach ($fields_info as $field_name => $value) {
+      $field_info = field_info_field($field_name);
+      $type = $field_info['type'];
+      //echo "The type is $type, duh.";
+    }
+    //$fields = field_info_fields();
+    ///dpm($fields);
+}*/
+
+/*
+
+/*foreach (node_type_get_names() as $type => $name) {
+    $entity_info['field_collection_item']['bundles']['typetemplate_gen_node_' . $type] = array(
+      'label' => t('@node_type comment', array('@node_type' => $name)),
+      // Provide the node type/bundle name for other modules, so it does not
+      // have to be extracted manually from the bundle name.
+      'node bundle' => $type,
+      'admin' => array(
+        // Place the Field UI paths for comments one level below the
+        // corresponding paths for nodes, so that they appear in the same set
+        // of local tasks. Note that the paths use a different placeholder name
+        // and thus a different menu loader callback, so that Field UI page
+        // callbacks get a comment bundle name from the node type in the URL.
+        // See comment_node_type_load() and comment_menu_alter().
+        'path' => 'admin/structure/types/manage/%typetemplate_gen_node_type',
+        'bundle argument' => 4,
+        'real path' => 'admin/structure/types/manage/' . str_replace('_', '-', $type),
+        'access arguments' => array('administer content types'),
+      ),
+    );
+  }*/

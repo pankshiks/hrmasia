@@ -1,0 +1,187 @@
+ 
+.theme1{
+        h2.title{
+             background:url(../images/icon/icon-news.png) no-repeat 0 0;
+        }
+    }
+    .theme2{
+        h2.title{
+             background:url(../images/icon/icon-article.png) no-repeat 0 0;
+        }
+    }
+    .theme3{
+        h2.title{
+             background:url(../images/icon/icon-events.png) no-repeat 0 0;
+        }
+    }
+    .theme4{
+        h2.title{
+             background:url(../images/icon/icon-hrmtv.png) no-repeat 0 0;
+        }
+    }
+    .theme5{
+        h2.title{
+             background:url(../images/icon/icon-jobs.png) no-repeat 0 0;
+        }
+    }
+    .theme6{
+        h2.title{
+             background:url(../images/icon/icon-jobs.png) no-repeat 0 0;
+        }
+    }
+    .theme7{
+       h2.title{
+             background:url(../images/icon/icon-poll.png) no-repeat 0 0;
+        }
+    }
+/*------------Sidebar padding none blocks--------------*/
+
+.padding-none{
+    .content{
+        padding: 0 !important;
+        background: none !important;
+    }
+}
+
+/*--------------Article Post date--------*/
+.post-date{
+    color: $EAC013;
+    margin-bottom: 10px;
+    @include fontfamilyversionfour;
+}
+
+/*--------------Homepage block bottom margin--------*/
+
+.block-content{
+    margin-bottom: 18px;
+}
+
+/*-------------Homepage block title-----------*/
+
+.block-content-title{
+    font-size: 23px;
+    margin-bottom: 10px;
+    line-height: 28px;
+    @include fontfamilyversiontwo;
+}
+
+/*-------------Homepage block title-----------*/
+
+.block-tags {
+    margin-bottom: 10px;
+    @include fontfamilyversionfive;
+    font-size: 12px;
+    a{
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+}
+
+/*-------------Homepage block half width-----------*/
+
+.half-block, #block-views-news-home-page-block-1{
+    max-width: 326px;
+    width: 42%;
+    float: left;
+    margin-right: 2%;
+    @include box-border;
+    background: $EAC011;
+    padding:19px 3%;
+    h2.title{
+        color: $EAC014;
+    padding-left: 41px;
+    line-height: 35px;
+    font-size: 13px;
+    text-transform: uppercase;
+        @include fontfamilyversionfive;
+        margin-top:0;
+    }
+    &.last{
+        margin-right:0;
+        float:right;
+    }
+        img{
+        width:100%;
+        height: auto;
+        border: 1px solid $EAC023;
+        margin-bottom: 10px;
+    }
+}
+#block-views-news-home-page-block-1{
+    width: 94%;
+    max-width: 100%;
+}
+/*-------------Homepage block title design-----------*/
+
+.sidebar{
+    .block{
+        background: #fff;
+        @include box-border;
+        margin-bottom: 20px;
+        padding: 19px 6%;
+
+    h2.title{
+        color: $EAC014;
+    padding-left: 41px;
+    line-height: 35px;
+    font-size: 13px;
+    text-transform: uppercase;
+        @include fontfamilyversionfive;
+    }
+    
+    }
+}
+/*------------Different title image for different pages--------------*/
+
+h1.title{
+    padding-left: 41px;
+    line-height: 35px;
+}
+.page-node-347{
+    h1{
+        &.title{
+            background:url(../images/icon/icon-jobs.png) no-repeat 0 0;
+
+        }
+    }
+}
+.page-hrm-events, .page-hrm-awards, .page-upcoming-congress, .page-hrm-summit{
+    h1{
+        &.title{
+            background:url(../images/icon/icon-events.png) no-repeat 0 0;
+
+        }
+    }
+}
+.page-courses{
+    h1{
+        &.title{
+            background:url(../images/icon/icon-courses.png) no-repeat 0 0;
+
+        }
+    }
+}
+.page-node-521{
+    h1{
+        &.title{
+            background:url(../images/icon/icon-subscribe.png) no-repeat 0 0;
+
+        }
+    }
+}
+.page-news{
+    h1{
+        &.title{
+            background:url(../images/icon/icon-news.png) no-repeat 0 0;
+
+        }
+    }
+}
+.page-contact{
+    h1{
+        &.title{
+           background:url(../images/icon/icon-contact.png) no-repeat 0 0;
+
+        }
+    }
+}

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Hrm features views feature.
+ */
+
+include_once 'hrm_features_views.features.inc';

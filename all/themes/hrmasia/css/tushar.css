@@ -1,0 +1,510 @@
+ 
+/* ----------------------------add themer css 05-10-2014------------------------------------------- */
+#highlighted .view-admin-views-user table{
+width:100%;
+}
+#highlighted .view-admin-views-user table tbody{
+border:none !important;
+}
+
+#highlighted .view-admin-views-user table tr{
+background:#bf202f !important;
+border:none !important;
+}
+
+#highlighted .view-admin-views-user{
+background:#bf202f !important;
+color:#FFFFFF;
+margin:15px 0px;
+padding:15px;
+}
+
+#highlighted .view-admin-views-user a{
+color:#FFFFFF;
+text-decoration:none;
+}
+
+#highlighted table td{
+vertical-align:top;
+}
+#highlighted .view-admin-views-user .views-field-picture img{
+ width: 120px;
+ height: 120px;
+ -moz-border-radius: 50%;
+ -webkit-border-radius: 50%;
+ border-radius: 50%;
+}
+
+#highlighted table td.views-field-picture{
+width:15%;
+padding:0px;
+}
+
+#highlighted table td.views-field-edit-node{
+text-align:right;
+width:15%;
+padding:25px 20px 0px 0px;
+}
+#highlighted table td.views-field-nothing{
+width:65%;
+padding:15px 0px 0px 10px;
+}
+.prof-title-01{
+font-size:28px;
+margin: 0px 0px 10px 0px;
+}
+.prof-title-02{
+font-weight:bold;
+}
+
+#block-views-admin-views-user-block-1 .views-field-nothing div{
+    text-align: left;
+}
+
+.view-my-community .views-columns-3 .views-column{
+border-bottom:1px solid #EFEFEF;
+clear:both;
+margin:0px;
+padding:20px 0px 10px 0px;
+min-height:133px;
+
+}
+.view-my-community .views-column img{
+max-width:170px;
+max-height:120px;
+}
+
+.view-my-community .view-field-title a{
+font-size:18px !important;
+}
+
+.view-my-community .views-field-field-image{
+width: 30%;
+float: left; 
+padding: 0px;
+}
+
+.page-my-communities h1.title {
+    padding-left: 41px;
+    line-height: 35px;
+    background: url('../img/h1-icon-01.png') no-repeat scroll 0px 0px transparent;
+}
+
+
+
+#block-views-forum-community-block h2.title{
+    padding-left: 41px;
+    line-height: 35px;
+    background: url('../img/h1-icon-02.png') no-repeat scroll 0px 0px transparent;
+	
+}
+
+#block-views-my-community-block-1 h2.title{
+    padding-left: 41px;
+    line-height: 35px;
+    background: url('../img/h1-icon-03.png') no-repeat scroll 0px 0px transparent;
+	
+}
+#block-views-my-community-block-3 h2.title{
+    padding-left: 41px;
+    line-height: 35px;
+    background: url('../img/h1-icon-03.png') no-repeat scroll 0px 0px transparent;
+	
+}
+#block-views-my-community-block-2 h2.title{
+    padding-left: 41px;
+    line-height: 35px;
+    background: url('../img/h1-icon-04.png') no-repeat scroll 0px 0px transparent;
+
+	
+}
+
+.view-forum-community .views-row{
+border-bottom:1px solid #EFEFEF;
+clear:both;
+margin:10px 0px;
+padding:0px 0px 20px 0px;
+}
+.view-forum-community .views-field-name a{
+font-size:18px !important;
+}
+.view-forum-community .views-row p{
+  margin:0px;
+  padding: 0px;
+}
+
+.view-forum-community .views-field-field-image{
+  float: left;
+  margin-right: 10px;
+    padding: 0;
+    width: 15%;
+}
+ul.pager-load-more{
+width:105px;
+background-color:#c0c0c0;
+margin:20px auto;
+-moz-border-radius: 8px;
+-webkit-border-radius: 8px;
+border-radius: 8px; /* future proofing */
+-khtml-border-radius: 8px; /* for old Konqueror browsers */
+padding:4px 5px;
+}
+.page-forum .region-highlighted{
+background:transparent !important;
+}
+
+/* ----------------------------add themer css 06-10-2014------------------------------------------- */
+
+#block-views-my-community-block-4 .view-my-community{
+background-color:#eaeaea;
+padding: 8px 30px 30px 30px;
+}
+.page-forum-731 #main-wrapper{
+margin-top: 90px;
+}
+#block-views-my-community-block-4 .page-forum .region-highlighted {
+padding:0px !important;
+
+}
+#block-views-my-community-block-4 .view-my-community .views-field-field-image{
+width:12%;
+}
+#block-views-my-community-block-1 .views-column{
+padding:10px;
+border-bottom:1px dotted #ccc;
+}
+
+#block-views-my-community-block-2 .views-column{
+padding:10px;
+border-bottom:1px solid #EFEFEF;
+}
+#block-views-my-community-block-3 .views-column{
+border-bottom: 1px dotted #ccc;
+    padding: 15px 10px;
+}
+
+#block-views-my-community-block-3 .views-field-field-contact-us-email{
+  margin-top: 18px;
+}
+
+#block-views-my-community-block-3 .views-field-field-course-type{
+  margin-top: 10px;
+}
+
+#block-views-my-community-block-1{
+  background: #f8f8f8 none repeat scroll 0 0;
+  margin-top: 10px;
+}
+
+.page-forum #highlighted
+{
+ background: #fff none repeat scroll 0 0;
+    height: 115px;
+    margin: 0 auto;
+    padding: 9px 0;
+    width: 90%;
+}
+
+.page-forum #main-wrapper{
+  margin-top: 45px;
+}
+/* ----------------------------add themer css 07-10-2014------------------------------------------- */
+.view-advanced-forum-topic-list .header_view{
+clear:both;
+margin:0px 0px 10px 0px;
+padding:0px;
+}
+.view-advanced-forum-topic-list .count{
+	width:70%;
+	float:left;
+	}
+	
+	
+.view-advanced-forum-topic-list .creat{
+	width:30%;
+	float:right;
+	padding:15px 0px;
+	}
+.view-advanced-forum-topic-list .views-field-picture{
+	width:14%;
+	float:left;
+	}
+.view-advanced-forum-topic-list li div.views-field-picture{
+	width:10% !important;
+	float:left;
+	}
+	
+	
+.view-advanced-forum-topic-list .views-field-picture img{	
+width: 80px;
+ height: 80px;
+ -moz-border-radius: 50%;
+ -webkit-border-radius: 50%;
+ border-radius: 50%;
+}
+.view-comments-recent .views-field-picture img{	
+	width:40px;
+ height:40px;
+ -moz-border-radius: 50%;
+ -webkit-border-radius: 50%;
+ border-radius: 50%;
+}
+
+.view-advanced-forum-topic-list .views-field-title{
+	width:70%;
+	}
+.view-advanced-forum-topic-list .views-field-name-1{
+	width:70%;
+	}
+.view-advanced-forum-topic-list .forum-node-create-links-top{
+padding: 0 0 20px;
+    width: 100%;
+}
+
+#forum .forum-topic-legend,
+#forum .forum-tools,
+#forum .forum-node-create-links,
+.forum-node-create-links .forum-add-jobs,
+.forum-node-create-links .forum-add-hrm_events,
+.forum-node-create-links .forum-add-training_courses{
+    display: none;
+}
+
+#forum .forum-node-create-links.forum-node-create-links-top{
+    display: block;
+}
+.view-advanced-forum-topic-list .views-column{
+  border-bottom: 1px dotted #ccc;
+    float: left;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+.views-field-timestamp{
+padding-left: 10%;
+}
+
+#forum .forum-node-create-links .forum-add-node {
+float: right;
+    margin-right: 10px;
+    text-align: right;
+    width: 75%;
+}
+
+#forum .forum-node-create-links .forum-add-node a{
+ font-size: 15px;
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.views-field-comment-count{
+ float: left;
+    margin: 10px 0 0;
+    width: 100%;
+}
+.views-field-replyto-comment{
+width:20%;
+float:right;
+text-align: right;
+}
+
+#forum .view-content .views-field-php{
+    float: left;
+    width: 100%;
+}
+.views-label-replyto-comment{
+display:none;
+}
+.view-comments-recent ul {
+  padding: 0px 0px 45px;
+}
+	
+h2.discussion_dev{
+float: left;
+    font-size: 14px;
+    line-height: 35px;
+    margin: 0;
+    padding-left: 41px;
+    background: url('../img/discussion.png') no-repeat scroll 0px 0px transparent;
+}
+.view-comments-recent ul li{
+border:none;
+}
+
+.views-field-replyto-comment a{
+ padding-left: 15px;
+    line-height: 35px;
+    background: url('../img/replay-comm.png') no-repeat scroll 0px 6px transparent;
+	font-size:14px;
+}
+
+.views-field-comment-count span{
+    line-height: 35px;
+    background: url('../img/small-comm.png') no-repeat scroll 0px 6px transparent;
+	font-size:14px;
+}
+.view-advanced-forum-topic-list .views-field-title a{
+font-size:18px;
+}
+
+.view-advanced-forum-topic-list .views-row p{
+    font-size: 14px;
+}
+.view-advanced-forum-topic-list .views-row.views-row-odd {
+    background: #f8f8f8 none repeat scroll 0 0;
+    padding: 8px !important;
+}
+li div.views-field-replyto-comment{
+padding-left:10%;
+width:90%;
+
+}
+ul div.views-field-comment-body{
+padding-left:10%;
+}
+.views-field-php-1	{
+padding: 60px 0px 0px;
+}
+/* ----------------------------add themer css 08-10-2014------------------------------------------- */
+
+
+#block-views-my-community-block-4 .views-field-php-1, #block-views-my-community-block-4 .views-field-description{
+padding:0px 0px 0px 12%;
+
+}
+
+#block-views-my-community-block-4 .views-field-description p{
+  color: #555;
+  font-size: 14px;
+  margin: 5px 0 0;
+  padding: 0;
+}
+
+#block-views-my-community-block-4 .views-field-name{
+  margin-bottom: 5px;
+}
+
+#block-views-my-community-block-4 .view-content{
+/*display:none;
+*/}
+
+#block-block-11 .member h2{
+    padding-left: 41px;
+    line-height: 35px;
+    background: url('../img/member-0-1.png') no-repeat scroll 0px 0px transparent;
+	font-size:14px;
+}
+#block-block-11 .member{
+width:70%;
+float:left;
+}
+#block-block-11 .right{
+float:right;
+width:30%;
+padding:20px 0px;
+
+}
+
+.page-forum #tabs-wrapper h1{
+display:none;
+}
+#block-block-11 .views-field-picture{
+width:33%;
+float:left;
+}
+#block-block-11 .views-field-picture img{	
+ width:75px;
+ height:75px;
+ -moz-border-radius: 50%;
+ -webkit-border-radius: 50%;
+ border-radius: 50%;
+}
+#block-views-comments-recent-block-1 h2{
+    padding-left: 41px;
+    line-height: 35px;
+    background: url('../img/discussion.png') no-repeat scroll 0px 0px transparent;
+	font-size:14px;
+
+}
+.view-forum-community .views-field-nothing span{
+    padding-left: 25px;
+    line-height: 35px;
+    background: url('../img/people-icon-01.png') no-repeat scroll 0px 0px transparent;
+
+
+}
+.rmspace .view-content{
+display:none;
+}
+
+
+/* ----------------------------add themer css 09-10-2014------------------------------------------- */
+
+.rmspace-01 .view-content{
+display:none;
+}
+
+.view-my-community ul.pager-load-more li a{
+color:#ffffff;
+}
+
+#block-menu-menu-myhrm ul li.last a{
+    background: url('../img/login-icon.png') no-repeat scroll 0px 0px transparent;
+    padding-left: 40px;
+    height: 33px;
+    padding-top: 7px;
+    display: block;
+    color: #000;
+	/*border-right: 1px solid #DDD;*/
+	margin-right: 7px;
+	padding-right: 8px;
+}
+
+#block-menu-menu-myhrm ul li.last{
+   /* border-left: 1px solid #DDD;*/
+}
+
+/* ----------------------------add themer css 10-10-2014------------------------------------------- */
+.view-news-list .item-list{
+clear: both;
+   margin: 10px auto;
+   width: 140px;
+
+}
+
+
+.view-news-list ul.pager-load-more{
+width: 140px;
+background-color:#FFF !important;
+
+}
+
+.view-news-list .pager-load-more a{
+background-color:#c0c0c0 !important;
+}
+
+#block-superfish-1 .title{
+    display: none;
+}
+
+ul#superfish-1 li ul li a.sf-depth-3{
+    margin: 0px;
+    padding: 0px !important;
+    text-transform: capitalize;
+    font-size: 11px;
+}
+
+.mem-tbl > img {
+    height: 80px !important;
+    margin-right: 10px;
+    width: 80px !important;
+}
+
+.node-type-forum #sidebar-second{
+     margin-top: 25px;
+}
+
+.not-front.node-type-forum #center-outer #center{
+    width: 97%;
+}

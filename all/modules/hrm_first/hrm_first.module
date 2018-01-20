@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the hrm first feature.
+ */
+
+include_once 'hrm_first.features.inc';

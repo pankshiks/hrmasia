@@ -1,0 +1,102 @@
+ <?php
+
+/**
+ * @file
+ * Tests for userpoints2 Services integration.
+ */
+
+// Avoid issues when the ServicesWebTestCase does not exist.
+if (!class_exists('ServicesWebTestCase')) {
+  return;
+}
+
+class userpoints2ServiceTestCase extends ServicesWebTestCase {
+  /**
+   * Class variables.
+   */
+  protected $privilegedUser = NULL;
+  /**
+   * Endpoint details.
+   */
+  protected $endpoint = NULL;
+
+  /**
+   * Implements getInfo().
+   */
+  public static function getInfo() {
+    return array(
+      'name' => t('Services integration'),
+      'description' => t('Tests the services resource userpoints2 and actions'),
+      'group' => t('userpoints2'),
+    );
+  }
+
+  /**
+   * Implementation of setUp().
+   */
+  public function setUp() {
+    parent::setUp(array('ctools', 'services', 'rest_server', 'userpoints2', 'userpoints2_service'));
+    // Set up endpoint.
+    $this->endpoint = $this->saveNewEndpoint();
+    // Extend endpoint with userpoints2 resources.
+    $this->endpoint->resources += array(
+      'userpoints2' => array(
+        'alias' => '',
+        'operations' => array(
+          'retrieve' => array(
+            'enabled' => 1,
+          ),
+          'index' => array(
+            'enabled' => 1,
+          ),
+        ),
+        'actions' => array(
+          'add' => array(
+            'enabled' => 1,
+          ),
+        ),
+      ),
+    );
+
+    services_endpoint_save($this->endpoint);
+  }
+
+  /**
+   * Basic tests for granting and retreiving points through a service.
+   */
+  public function testAddRetrievePoints() {
+    // Create and log in our privileged user.
+    $this->privilegedUser = $this->drupalCreateUser(array('view userpoints2', 'administer userpoints2'));
+    $this->drupalLogin($this->privilegedUser);
+
+    $normal_user = $this->drupalCreateUser(array());
+
+    $total = 0;
+    for ($i = 0; $i < 3; $i++) {
+      $points = rand(-50, 50);
+      $params = array(
+        'uid' => $normal_user->uid,
+        'points' => $points,
+      );
+      $this->servicesPost($this->endpoint->path . '/userpoints2/add', $params);
+      $total += $points;
+    }
+
+    $result = $this->servicesGet($this->endpoint->path . '/userpoints2/' . $normal_user->uid);
+    $this->assertEqual($total, $result['body']);
+
+    // Give the admin user some points too.
+    $points = rand(-50, 50);
+    $params = array(
+      'uid' => $this->privilegedUser->uid,
+      'points' => $points,
+    );
+    $this->servicesPost($this->endpoint->path . '/userpoints2/add', $params);
+
+    $result = $this->servicesGet($this->endpoint->path . '/userpoints2');
+    $index = $result['body'];
+    $this->assertEqual($index[0]->points, userpoints2_get_current_points($index[0]->uid));
+    $this->assertEqual($index[1]->points, userpoints2_get_current_points($index[1]->uid));
+    $this->assertEqual($index[0]->max_points, userpoints2_get_max_points($index[0]->uid));
+    $this->assertEqual($index[1]->max_points, userpoints2_get_max_points($index[1]->uid));
+  }

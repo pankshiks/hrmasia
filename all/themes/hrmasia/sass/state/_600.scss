@@ -1,0 +1,30 @@
+ @media all and (max-width: 764px) {
+ 
+    .mobile-content{
+    display: block;
+}
+#logo-floater img{
+    width: 80%;
+}
+#header,  #footer, #container, #highlighted, .mainmenu, #content-bottom {
+    width: 94%;
+    padding: 0 3%;
+ }
+ #block-search-form{
+     width: 60%;
+     
+ }
+ #block-block-1{
+     width: 26%;
+ }
+ #block-menu-menu-myhrm{
+     width: 16%;
+ }
+
+ /*-------------------Article design for devices----------------------*/
+ 
+ .view-news-list .views-row .views-column, 
+ .view-aricle-post .views-row .views-column, 
+ .view-hrm-tv-list .views-row .views-column{
+     width: 33%;
+ }

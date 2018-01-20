@@ -1,0 +1,5 @@
+ name = EDM Generator
+description = This is an html generator for EDM of the HRM asia website.
+package = Custom
+core = 7.x
+version = "7.x-1.0"

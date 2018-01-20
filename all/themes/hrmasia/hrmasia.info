@@ -1,0 +1,45 @@
+ name = HRM Asia
+description = Responsive Layout for HRMASIA.
+package = Core
+version = VERSION
+core = 7.x
+
+stylesheets[all][] = css/style.css
+;stylesheets[all][] = css/jcarousel.responsive.css
+;stylesheets[all][] = css/arjun.css
+stylesheets[all][] = css/custom.css
+;stylesheets[all][] = css/tushar.css
+
+
+
+scripts[] = js/jcarousel.responsive.js
+scripts[] = js/jquery.jcarousel.min.js
+;scripts[] = js/google-dclick.js
+scripts[] = js/chili-1.7.pack.js
+scripts[] = js/jquery.cycle.all.min.js
+scripts[] = js/readmore.min.js
+scripts[] = js/custom.js
+scripts[] = js/google-dclick.js
+
+
+regions[search_bar]        = Search bar
+regions[user_menu]         = User Menu
+regions[mainmenu]          = Main Menu
+regions[highlighted]       = Highlighted
+regions[highlighted1]      = Highlighted1
+regions[sidebar_first]     = Sidebar first
+regions[sidebar_second]    = Sidebar second
+regions[content_top]       = Content Top
+regions[content]           = Content
+regions[content-first]     = Content First
+regions[content-second]    = Content Second
+regions[content-third]     = Content Third
+regions[content_bottom]    = Content Bottom
+regions[content_bottom1]   = Content Bottom1
+regions[footer]            = Footer
+
+; Information added by drupal.org packaging script on 2013-08-08
+version = "7.23"
+project = "drupal"
+datestamp = "1375928238"
+

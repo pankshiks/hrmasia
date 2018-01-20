@@ -1,0 +1,17 @@
+ name = userpoints2
+description = userpoints2 core: API module for recording points for other modules.
+package = userpoints2
+core = 7.x
+files[]=userpoints2.views.inc
+files[]=userpoints2.module
+files[]=tests/userpoints2_api.test
+files[]=views/userpoints2_views_handler_field_category.inc
+files[]=views/userpoints2_views_handler_filter_category.inc
+files[]=views/userpoints2_views_handler_argument_category.inc
+configure = admin/config/people/userpoints2/settings
+
+; Information added by drupal.org packaging script on 2011-08-23
+version = "7.x-1.0"
+core = "7.x"
+project = "userpoints2"
+datestamp = "1314138121"

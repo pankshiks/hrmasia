@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html<?php print $html_attributes; ?>>
+<head>
+<?php print $head; ?>
+<title><?php print $head_title; ?></title>
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+<?php print $styles; ?>
+<link href='http://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+<?php print $scripts; ?>
+<?php
+global $user;
+if($user->uid != 0){
+$u = profile2_load_by_user($user, "main");
+$append = null;
+if(isset($u->field_employe_size['und'][0]['value'])){
+  $append .= "&comsize=".$u->field_employe_size['und'][0]['value'];
+}
+
+if(isset($u->field_country['und'][0]['value'])){
+  $append .= "&country=".$u->field_country['und'][0]['value'];
+}
+
+if(arg(0) == "taxonomy" && arg(2) == 266){
+  $append .= "&joblvl=1";
+}
+if(arg(0) == "taxonomy" && arg(2) == 256){
+  $append .= "&joblvl=2";
+}
+if(arg(0) == "taxonomy" && arg(2) == 261){
+  $append .= "&joblvl=3";
+}
+
+print '<script type="text/javascript" src="http://ps.eyeota.net/pixel?pid=1mpf2m0&sid=hrm&t=js'.$append.'"></script>';
+}
+?>
+</head>
+ 
+<body<?php print $body_attributes;?>>
+<!--<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>-->
+<?php print $page_top; ?>
+<?php print $page; ?>
+<?php print $page_bottom; ?>
+</body>
+</html

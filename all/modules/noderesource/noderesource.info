@@ -1,0 +1,8 @@
+name = node Resource
+description = Sample resource implementation
+package = nodes example
+
+core = 7.x
+
+files[] = noderesource.inc
+files[] = noderesource.module

@@ -1,0 +1,120 @@
+O:8:"stdClass":4:{s:3:"cid";s:50:"unpack_options:e41b16691e1ac236432e4aed51eea630:en";s:7:"created";i:1515581042;s:6:"expire";i:0;s:4:"data";a:42:{s:8:"defaults";a:32:{s:6:"access";b:1;s:5:"cache";b:1;s:5:"query";b:1;s:5:"title";b:1;s:9:"css_class";b:1;s:19:"display_description";b:0;s:8:"use_ajax";b:1;s:23:"hide_attachment_summary";b:1;s:16:"hide_admin_links";b:1;s:5:"pager";b:0;s:13:"pager_options";b:1;s:8:"use_more";b:1;s:15:"use_more_always";b:1;s:13:"use_more_text";b:1;s:12:"exposed_form";b:1;s:20:"exposed_form_options";b:1;s:12:"link_display";b:1;s:8:"link_url";s:0:"";s:8:"group_by";b:1;s:12:"style_plugin";b:0;s:13:"style_options";b:0;s:10:"row_plugin";b:0;s:11:"row_options";b:0;s:6:"header";b:0;s:6:"footer";b:1;s:5:"empty";b:0;s:13:"relationships";b:0;s:6:"fields";b:0;s:5:"sorts";b:0;s:9:"arguments";b:0;s:7:"filters";b:0;s:13:"filter_groups";b:0;}s:5:"title";s:0:"";s:7:"enabled";b:1;s:15:"display_comment";s:0:"";s:9:"css_class";s:0:"";s:19:"display_description";s:0:"";s:8:"use_ajax";b:0;s:23:"hide_attachment_summary";b:0;s:16:"hide_admin_links";b:0;s:14:"items_per_page";i:10;s:6:"offset";i:0;s:9:"use_pager";b:0;s:8:"use_more";b:0;s:15:"use_more_always";b:0;s:13:"use_more_text";s:4:"more";s:12:"link_display";s:0:"";s:8:"link_url";s:0:"";s:8:"group_by";b:0;s:14:"field_language";s:22:"***CURRENT_LANGUAGE***";s:27:"field_language_add_to_query";i:1;s:6:"access";a:1:{s:4:"type";s:4:"none";}s:5:"cache";a:1:{s:4:"type";s:4:"none";}s:5:"query";a:2:{s:4:"type";s:11:"views_query";s:7:"options";a:0:{}}s:12:"exposed_form";a:2:{s:4:"type";s:5:"basic";s:7:"options";a:0:{}}s:5:"pager";a:2:{s:4:"type";s:4:"none";s:7:"options";a:1:{s:6:"offset";s:1:"0";}}s:12:"style_plugin";s:7:"default";s:13:"style_options";a:2:{s:17:"default_row_class";b:0;s:17:"row_class_special";b:0;}s:10:"row_plugin";s:6:"fields";s:11:"row_options";a:1:{s:22:"default_field_elements";b:0;}s:13:"exposed_block";b:0;s:6:"header";a:1:{s:3:"php";a:4:{s:2:"id";s:3:"php";s:5:"table";s:5:"views";s:5:"field";s:3:"php";s:10:"php_output";s:1134:"<style>
+.view-courses2 h3 { display:none; }
+.course-views-row {
+	padding: 15px 0;
+	border-bottom: 1px solid #dddddd;
+}
+.course-views-row .course-container{
+	background: #f7eee7;
+	padding: 15px 2.5%;
+}
+.course-views-row .views-field-title{
+	font-size: 17px;
+	font-family: 'Merriweather', Arial, serif;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+.course-views-row .course-detail{
+	font-size: 13px;
+	font-family: 'Ubuntu', Arial, serif;
+	font-weight: 400;
+	font-style: italic;
+	color: #6d6e71;
+}
+.course-views-row .course-bottom{
+	clear: both;
+	overflow: hidden;
+}
+.course-views-row .course-left{
+	width: 70%;
+	float: left;
+}
+.course-views-row .course-right{
+	width: 30%;
+	float: right;
+	text-align: right;
+	padding-top: 10px;
+}
+</style>
+<?php
+/*
+$block = module_invoke('views','block_view','course_category-block_3');
+print render($block['content']);
+*/
+?>
+<?php
+/*
+$block = module_invoke('views','block_view','course_category-block_4');
+print render($block['content']);
+*/
+?>
+<?php
+$block = module_invoke('views','block_view','courses2-block_1');
+print render($block['content']);
+?>";}}s:6:"footer";a:0:{}s:5:"empty";a:1:{s:4:"area";a:6:{s:2:"id";s:4:"area";s:5:"table";s:5:"views";s:5:"field";s:4:"area";s:5:"empty";b:1;s:7:"content";s:303:"<p>No results can be found under this category.</p>
+<?php
+/*
+$block = module_invoke('views','block_view','course_category-block_3');
+print render($block['content']);
+*/
+?>
+<?php
+/*
+$block = module_invoke('views','block_view','course_category-block_4');
+print render($block['content']);
+*/
+?>";s:6:"format";s:8:"php_code";}}s:13:"relationships";a:1:{s:28:"field_trainining_company_nid";a:4:{s:2:"id";s:28:"field_trainining_company_nid";s:5:"table";s:35:"field_data_field_trainining_company";s:5:"field";s:28:"field_trainining_company_nid";s:5:"delta";s:2:"-1";}}s:6:"fields";a:13:{s:25:"field_course_premium_type";a:8:{s:2:"id";s:25:"field_course_premium_type";s:5:"table";s:36:"field_data_field_course_premium_type";s:5:"field";s:25:"field_course_premium_type";s:5:"label";s:0:"";s:7:"exclude";b:1;s:19:"element_label_colon";b:0;s:23:"element_default_classes";b:0;s:4:"type";s:29:"taxonomy_term_reference_plain";}s:5:"title";a:7:{s:2:"id";s:5:"title";s:5:"table";s:4:"node";s:5:"field";s:5:"title";s:5:"label";s:0:"";s:7:"exclude";b:1;s:5:"alter";a:2:{s:13:"word_boundary";b:0;s:8:"ellipsis";b:0;}s:19:"element_label_colon";b:0;}s:24:"field_trainining_company";a:6:{s:2:"id";s:24:"field_trainining_company";s:5:"table";s:35:"field_data_field_trainining_company";s:5:"field";s:24:"field_trainining_company";s:5:"label";s:0:"";s:7:"exclude";b:1;s:19:"element_label_colon";b:0;}s:18:"field_course_dates";a:8:{s:2:"id";s:18:"field_course_dates";s:5:"table";s:29:"field_data_field_course_dates";s:5:"field";s:18:"field_course_dates";s:5:"label";s:0:"";s:7:"exclude";b:1;s:19:"element_label_colon";b:0;s:23:"element_default_classes";b:0;s:8:"settings";a:5:{s:11:"format_type";s:6:"normal";s:6:"fromto";s:5:"value";s:15:"multiple_number";s:0:"";s:13:"multiple_from";s:0:"";s:11:"multiple_to";s:0:"";}}s:20:"field_courses_region";a:7:{s:2:"id";s:20:"field_courses_region";s:5:"table";s:31:"field_data_field_courses_region";s:5:"field";s:20:"field_courses_region";s:5:"label";s:0:"";s:7:"exclude";b:1;s:19:"element_label_colon";b:0;s:23:"element_default_classes";b:0;}s:23:"field_register_link_url";a:7:{s:2:"id";s:23:"field_register_link_url";s:5:"table";s:34:"field_data_field_register_link_url";s:5:"field";s:23:"field_register_link_url";s:5:"label";s:0:"";s:7:"exclude";b:1;s:19:"element_label_colon";b:0;s:17:"click_sort_column";s:3:"url";}s:17:"field_course_type";a:6:{s:2:"id";s:17:"field_course_type";s:5:"table";s:28:"field_data_field_course_type";s:5:"field";s:17:"field_course_type";s:5:"label";s:0:"";s:7:"exclude";b:1;s:19:"element_label_colon";b:0;}s:20:"field_course_summary";a:7:{s:2:"id";s:20:"field_course_summary";s:5:"table";s:31:"field_data_field_course_summary";s:5:"field";s:20:"field_course_summary";s:5:"label";s:0:"";s:7:"exclude";b:1;s:19:"element_label_colon";b:0;s:23:"element_default_classes";b:0;}s:20:"field_courses_point1";a:7:{s:2:"id";s:20:"field_courses_point1";s:5:"table";s:31:"field_data_field_courses_point1";s:5:"field";s:20:"field_courses_point1";s:5:"label";s:0:"";s:7:"exclude";b:1;s:19:"element_label_colon";b:0;s:23:"element_default_classes";b:0;}s:20:"field_courses_point2";a:7:{s:2:"id";s:20:"field_courses_point2";s:5:"table";s:31:"field_data_field_courses_point2";s:5:"field";s:20:"field_courses_point2";s:5:"label";s:0:"";s:7:"exclude";b:1;s:19:"element_label_colon";b:0;s:23:"element_default_classes";b:0;}s:20:"field_courses_point3";a:7:{s:2:"id";s:20:"field_courses_point3";s:5:"table";s:31:"field_data_field_courses_point3";s:5:"field";s:20:"field_courses_point3";s:5:"label";s:0:"";s:7:"exclude";b:1;s:19:"element_label_colon";b:0;s:23:"element_default_classes";b:0;}s:11:"field_image";a:10:{s:2:"id";s:11:"field_image";s:5:"table";s:22:"field_data_field_image";s:5:"field";s:11:"field_image";s:12:"relationship";s:28:"field_trainining_company_nid";s:5:"label";s:0:"";s:7:"exclude";b:1;s:19:"element_label_colon";b:0;s:23:"element_default_classes";b:0;s:17:"click_sort_column";s:3:"fid";s:8:"settings";a:2:{s:11:"image_style";s:0:"";s:10:"image_link";s:0:"";}}s:3:"php";a:27:{s:2:"id";s:3:"php";s:5:"table";s:5:"views";s:5:"field";s:3:"php";s:12:"relationship";s:4:"none";s:10:"group_type";s:5:"group";s:7:"ui_name";s:0:"";s:5:"label";s:0:"";s:7:"exclude";i:0;s:5:"alter";a:26:{s:10:"alter_text";i:0;s:4:"text";s:0:"";s:9:"make_link";i:0;s:4:"path";s:0:"";s:8:"absolute";i:0;s:8:"external";i:0;s:14:"replace_spaces";i:0;s:9:"path_case";s:4:"none";s:15:"trim_whitespace";i:0;s:3:"alt";s:0:"";s:3:"rel";s:0:"";s:10:"link_class";s:0:"";s:6:"prefix";s:0:"";s:6:"suffix";s:0:"";s:6:"target";s:0:"";s:5:"nl2br";i:0;s:10:"max_length";s:0:"";s:13:"word_boundary";i:1;s:8:"ellipsis";i:1;s:9:"more_link";i:0;s:14:"more_link_text";s:0:"";s:14:"more_link_path";s:0:"";s:10:"strip_tags";i:0;s:4:"trim";i:0;s:13:"preserve_tags";s:0:"";s:4:"html";i:0;}s:12:"element_type";s:0:"";s:13:"element_class";s:0:"";s:18:"element_label_type";s:0:"";s:19:"element_label_class";s:0:"";s:19:"element_label_colon";b:0;s:20:"element_wrapper_type";s:0:"";s:21:"element_wrapper_class";s:0:"";s:23:"element_default_classes";i:1;s:5:"empty";s:0:"";s:10:"hide_empty";i:0;s:10:"empty_zero";i:0;s:16:"hide_alter_empty";i:1;s:13:"use_php_setup";i:0;s:9:"php_setup";s:0:"";s:9:"php_value";s:0:"";s:10:"php_output";s:2785:"<?php
+//courses search
+if ($data->field_field_course_premium_type[0]['rendered']['#markup']=='Enhanced Premium') {
+	if (strtotime($data->field_field_course_dates[0]['raw']['value']) + (7 * 24 * 60 * 60) < time()) {
+		//enhanced premium
+		echo '
+		<div class="course-views-row"> 
+		<div class="course-container">
+			<div class="views-field-title"><a href="/'. drupal_get_path_alias('node/'.$data->nid) .'">'. $data->node_title .'</a></div>
+			<div class="course-detail">'. $data->field_field_course_dates[0]['rendered']['#markup'];
+		if (isset($data->field_field_trainining_company[0]['rendered']['#title'])&&!empty($data->field_field_trainining_company[0]['rendered']['#title'])){
+			echo ' - '. $data->field_field_trainining_company[0]['rendered']['#title'];
+		}
+		if (isset($data->field_field_courses_region[0]['rendered']['#title'])&&!empty($data->field_field_courses_region[0]['rendered']['#title'])){
+			echo ' - '. $data->field_field_courses_region[0]['rendered']['#title'];
+		}
+		echo '</div>
+			<div class="course-bottom">
+				<div class="course-left">'. $data->field_field_course_summary[0]['raw']['safe_value'];
+		if (isset($data->field_field_courses_point1[0]['raw']['safe_value'])&&!empty($data->field_field_courses_point1[0]['raw']['safe_value'])){
+			echo '<br>- '. $data->field_field_courses_point1[0]['raw']['safe_value'];
+		}
+		if (isset($data->field_field_courses_point2[0]['raw']['safe_value'])&&!empty($data->field_field_courses_point2[0]['raw']['safe_value'])){
+			echo '<br>- '. $data->field_field_courses_point2[0]['raw']['safe_value'];
+		}
+		if (isset($data->field_field_courses_point3[0]['raw']['safe_value'])&&!empty($data->field_field_courses_point3[0]['raw']['safe_value'])){
+			echo '<br>- '. $data->field_field_courses_point3[0]['raw']['safe_value'];
+		}				
+		echo
+			'</div>
+				<div class="course-right">
+					<img typeof="foaf:Image" src="'. file_create_url($data->field_field_image[0]['raw']['uri']) .'" alt="">
+				</div>
+			</div>
+		</div>
+		</div>
+		';
+	} else {
+		//echo '<style>.custom-job-listing .views-row-'. ($view->row_index+1) .' { display:none; }</style>';               
+	}
+} else {
+	//premium
+	echo '
+	<div class="course-views-row"> 
+	<div class="course-container" style="background: none;">
+		<div class="views-field-title"><a href="/'. drupal_get_path_alias('node/'.$data->nid) .'">'. $data->node_title .'</a></div>
+		<div class="course-detail">'. $data->field_field_course_dates[0]['rendered']['#markup'] .' - '. $data->field_field_trainining_company[0]['rendered']['#title'] .' - '. $data->field_field_courses_region[0]['rendered']['#title'] .'</div>
+		<div class="course-bottom">
+			<div class="course-left" style="width:100%;">'. $data->field_field_course_summary[0]['raw']['safe_value'] .'</div>
+		</div>
+	</div>
+	</div>
+	';
+}
+?>";s:22:"use_php_click_sortable";s:1:"0";s:18:"php_click_sortable";s:0:"";}}s:5:"sorts";a:1:{s:24:"field_course_dates_value";a:9:{s:2:"id";s:24:"field_course_dates_value";s:5:"table";s:29:"field_data_field_course_dates";s:5:"field";s:24:"field_course_dates_value";s:12:"relationship";s:4:"none";s:10:"group_type";s:5:"group";s:7:"ui_name";s:0:"";s:5:"order";s:3:"ASC";s:7:"exposed";b:0;s:6:"expose";a:1:{s:5:"label";s:0:"";}}}s:9:"arguments";a:1:{s:3:"tid";a:7:{s:2:"id";s:3:"tid";s:5:"table";s:14:"taxonomy_index";s:5:"field";s:3:"tid";s:14:"default_action";s:5:"empty";s:21:"default_argument_type";s:5:"fixed";s:7:"summary";a:2:{s:17:"number_of_records";s:1:"0";s:6:"format";s:15:"default_summary";}s:15:"summary_options";a:1:{s:14:"items_per_page";s:2:"25";}}}s:13:"filter_groups";a:2:{s:8:"operator";s:3:"AND";s:6:"groups";a:1:{i:1;s:3:"AND";}}s:7:"filters";a:3:{s:6:"status";a:6:{s:2:"id";s:6:"status";s:5:"table";s:4:"node";s:5:"field";s:6:"status";s:5:"value";s:1:"1";s:5:"group";i:1;s:6:"expose";a:6:{s:11:"operator_id";s:0:"";s:5:"label";s:9:"Published";s:8:"operator";s:9:"status_op";s:10:"identifier";s:6:"status";s:8:"required";b:1;s:14:"remember_roles";a:7:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:16;i:0;i:21;i:0;i:26;i:0;i:31;i:0;}}}s:4:"type";a:5:{s:2:"id";s:4:"type";s:5:"table";s:4:"node";s:5:"field";s:4:"type";s:5:"value";a:1:{s:16:"training_courses";s:16:"training_courses";}s:5:"group";i:1;}s:25:"field_course_dates_value2";a:5:{s:2:"id";s:25:"field_course_dates_value2";s:5:"table";s:29:"field_data_field_course_dates";s:5:"field";s:25:"field_course_dates_value2";s:8:"operator";s:2:">=";s:12:"default_date";s:3:"now";}}s:4:"path";s:15:"taxonomy/term/%";s:4:"menu";a:7:{s:4:"type";s:4:"none";s:5:"title";s:0:"";s:11:"description";s:0:"";s:6:"weight";i:0;s:4:"name";s:10:"navigation";s:7:"context";s:0:"";s:19:"context_only_inline";b:0;}s:11:"tab_options";a:5:{s:4:"type";s:4:"none";s:5:"title";s:0:"";s:11:"description";s:0:"";s:6:"weight";i:0;s:4:"name";s:10:"navigation";}}}

@@ -1,0 +1,83 @@
+ <?php
+
+/**
+ * Implements hook_permission().
+ */
+function myhrm_region_module_permission() {
+  return array(
+    'access myhrm section' => array(
+      'title' => t('Access myhrm section for current logged-in user'),
+    )
+  );
+}
+
+
+/**
+ * Implements hook_menu().
+ */
+function myhrm_region_module_menu() {
+	$items = array();
+	
+	$items['myhrm'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('myhrm_region_form'),
+    'access callback' => TRUE,
+		'file' => 'include/myhrm_region.inc',
+  );
+	
+	$items['myhrm/myprofile'] = array(
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('myhrm_region_myprofile_form'),
+    'access callback' => TRUE,
+		'file' => 'include/myhrm_region_myprofile.inc',
+  );
+	
+	$items['myhrm/%'] = array(
+    'page callback' => 'myhrm_ajaxlink_callback',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+	);
+	
+  return $items;
+}
+
+
+
+
+
+
+/**
+ * Ajax callback to display the current time.
+ */
+function myhrm_ajaxlink_callback($ajax) {
+	
+	global $user;
+	
+  // Do any database queries, processing, etc.
+  $content = '<ul><li style="list-style: none;"><a href="?q=user/'.$user->uid.'/edit">Edit profile</a></li><li style="list-style: none;"><a href="?q=user/'.$user->uid.'/edit/select_preferences">Select preferences</a></li><li style="list-style: none;"><a href="?q=user/'.$user->uid.'/edit/choose_discussion_topic">Choose Discussion topic</a></li></ul>';
+	
+	//.t('The current time is: !time', array('!time' => date('Y-m-d H:i:s')));
+ 
+  if ($ajax == 'ajax') {
+    $commands = array();
+    // Ajax command to replace the #ajax-display element with the current time.
+    $commands[] = ajax_command_replace('#ajax-display', "<div id='ajax-display'>" . $content . "</div>");
+    // Add a visual "changed" marker to the '#ajax-display' element.
+    $commands[] = ajax_command_changed('#ajax-display');
+    // Trigger our ajax_link jQuery plugin.
+    $commands[] = ajax_command_invoke(NULL, "ajax_link");
+ 
+    // Menu 'page callback' and #ajax['callback'] functions are supposed to
+    // return render arrays. If returning an Ajax commands array, it must be
+    // encapsulated in a render array structure.
+    ajax_deliver(array('#type' => 'ajax', '#commands' => $commands));
+  }
+  else {
+    // No ajax, just display the time on a page using renderable array.
+    return array(
+      '#markup' => $content,
+    );
+  }
+}
+
+

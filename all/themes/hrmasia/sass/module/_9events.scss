@@ -1,0 +1,26 @@
+ 
+/*----------------Event Landing Page---------------*/
+
+.view-hrm-events-list{
+    .views-row{
+        border-bottom: 1px solid $EAC023;
+        padding-bottom: 20px;
+        margin-bottom: 25px;
+        .views-row{
+            padding: 0;
+            margin: 0;
+        }
+        .views-field-field-banner-image{
+            margin-bottom: 15px;
+        }
+        .views-field-title{
+            font-size: 17px;
+            @include fontfamilyversiontwo;
+            margin-bottom: 10px;
+        }
+        &.views-row-last{
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+    }

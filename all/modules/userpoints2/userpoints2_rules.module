@@ -1,0 +1,61 @@
+ <?php
+
+
+/**
+ * @file
+ * Rules integration for the user points module.
+ */
+
+/**
+ * Implements hook_userpoints2().
+ */
+function userpoints2_rules_userpoints2($op, &$params = array()) {
+  // Transactions without points are not passed to rules for now.
+  if (!is_array($params) || !isset($params['points'])) {
+    return;
+  }
+
+
+  $event = '';
+  switch ($op) {
+    case 'points after':
+      $event = 'userpoints2_event_points_awarded_after';
+      break;
+
+    case 'points before':
+      $event = 'userpoints2_event_points_awarded_before';
+      break;
+  }
+
+  try {
+
+    if (!empty($event)) {
+      // Convert to an object.
+      $userpoints2_transaction = (object) $params;
+
+      // Provide uid as wrapped user entity.
+      $userpoints2_transaction->user = entity_metadata_wrapper('user', $userpoints2_transaction->uid);
+
+      $userpoints2_transaction->entity = NULL;
+      if (!empty($userpoints2_transaction->entity_type) && !empty($userpoints2_transaction->entity_id)) {
+        // Make entity available as lazy loading wrapper
+        $userpoints2_transaction->entity = entity_metadata_wrapper($userpoints2_transaction->entity_type, $userpoints2_transaction->entity_id);
+      }
+      // Invoke rules event.
+      rules_invoke_event($event, $userpoints2_transaction);
+
+      // Convert back to keep any changes to the properties.
+      $params = (array) $userpoints2_transaction;
+      $params['uid'] = $userpoints2_transaction->user->getIdentifier();
+      if ($userpoints2_transaction->entity) {
+        $params['entity_type'] = $userpoints2_transaction->entity->type();
+        $params['entity_id'] = $userpoints2_transaction->entity->getIdentifier();
+      }
+      unset($params['entity']);
+    }
+  } catch (EntityMetadataWrapperException $e) {
+    // The referenced entity does not exist.
+    // @todo: Find a way to handle this more gracefully.
+  }
+  unset($params['entity']);
+  unset($params['user']);

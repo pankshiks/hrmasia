@@ -1,0 +1,118 @@
+ /*------------------Hide page title-----------*/
+.page-courses, .page-news, .page-aricle-post, .page-hrmtv,.node-type-hrm-tv, .node-type-training-courses, .node-type-news{
+           h1.with-tabs{
+            display: none;
+        }
+}
+
+
+.page-news, .page-aricle-post, .page-hrmtv, .node-type-training-courses{
+    #center{
+        background: none !important;
+    }
+}
+.node-type-training-courses{
+    .custom-job-page{
+        background: $EAC011;
+        padding-top: 10px;
+        padding-bottom: 25px;
+    }
+}
+.view-news-list, .view-aricle-post, .view-hrm-tv-list{
+    h2.title{
+        margin-top: 0;
+    }
+    .news-bottom{
+        display: table;
+        margin-bottom: 3px;
+/*        .news-image, .title{
+            display: table-cell;
+            vertical-align: bottom;
+        }*/
+        .news-image{
+            img{
+                float: left;
+                 margin-right: 2%;
+            }
+        }
+        h1.title{
+            color: $EAC012;
+            line-height: 36px;
+            padding-left: 15px;
+            text-transform: capitalize;
+        }
+    }
+    .views-row{
+
+        .views-column{
+            max-width: 223px;
+            width: 34%;
+            margin-right:.3%;
+            float: left;
+            margin-bottom: 5px;
+            background: $EAC011;
+            border-top: 2px solid $EAC012;
+            .views-field-nothing{
+                padding: 10px 7%;
+                .view-field-title{
+                    font-size: 17px;
+                    @include fontfamilyversiontwo;
+                    margin-bottom: 5px;
+                }
+                .created{
+                    @include fontfamilyversionfour;
+                    font-size: 12px;
+                    color: $EAC013;
+                }
+                .view-field-body{
+                    p{
+                        margin-top: 5px;
+                    }
+                }
+            }
+            &.views-column-last{
+                margin-right: 0;
+            }
+        }
+    }
+    .item-list{
+        clear:both;
+
+        ul.pager{
+            margin: 0;
+        }
+    }
+    .pager-load-more{
+        background: #e5e5e5;
+        padding: 12px 0;
+        a{
+            @include fontfamilyversionfive;
+            color: $EAC014;
+            text-transform: uppercase;
+        }
+        &.pager-load-more-empty{
+            display: none;
+        }
+    }
+    .view-header{
+        clear: both;
+        overflow: hidden;
+        margin-bottom: 3px;
+        .view-content .views-row .views-column{
+            max-width: 100%;
+            width: 100%;
+            float: none;
+            margin: 0;
+            border: none;
+            background: none;
+            .views-field-nothing{
+                padding: 0;
+                
+            }
+        }
+    }
+}
+
+
+
+

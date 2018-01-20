@@ -1,0 +1,5 @@
+ name = typetemplate gen
+description = Create templates for customs types
+package = Custom
+core = 7.x
+version = "7.x-1.0"

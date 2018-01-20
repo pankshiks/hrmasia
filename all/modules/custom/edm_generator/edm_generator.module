@@ -1,0 +1,77 @@
+ <?php
+function edm_generator_permission() {
+  return array(
+    'administer edm module' => array(
+      'title' => t('Administer edm module'),
+      'description' => t('Access to edm module related pages.'),
+    ),
+  );
+}
+
+function edm_generator_menu() {
+	$items = array();
+	$items['edm-generator'] = array(
+		'title' => 'EDM Generator',
+		'page callback' => 'edm_generator',
+		'access arguments' => array('administer edm module'),
+		'type' => MENU_CALLBACK,
+		'file' => 'edm_generator.inc',
+	);
+	$items['edm-joblist-generator'] = array(
+		'title' => 'EDM Job Generator',
+		'page callback' => 'edm_joblist_generator',
+		'access arguments' => array('administer edm module'),
+		'type' => MENU_CALLBACK,
+		'file' => 'edm_joblist_generator.inc',
+	);
+	$items['edm-course-generator'] = array(
+		'title' => 'EDM Course Generator',
+		'page callback' => 'edm_course_generator',
+		'access arguments' => array('administer edm module'),
+		'type' => MENU_CALLBACK,
+		'file' => 'edm_course_generator.inc',
+	);
+        $items['edm-generator-simple'] = array(
+		'title' => 'EDM Generator',
+		'page callback' => 'edm_generator_simple',
+		'access arguments' => array('administer edm module'),
+		'type' => MENU_CALLBACK,
+		'file' => 'edm_generator_simple.inc',
+	);
+        $items['edm-generator-hr-in-practice'] = array(
+		'title' => 'EDM Generator',
+		'page callback' => 'edm_generator_hr_in_practice',
+		'access arguments' => array('administer edm module'),
+		'type' => MENU_CALLBACK,
+		'file' => 'edm_generator_hr_in_practice.inc',
+	);
+        $items['edm-generator-the-latest-hr-news'] = array(
+		'title' => 'EDM Generator',
+		'page callback' => 'edm_generator_the_latest_hr_news',
+		'access arguments' => array('administer edm module'),
+		'type' => MENU_CALLBACK,
+		'file' => 'edm_generator_the_latest_hr_news.inc',
+	);
+        $items['edm-generator-my-hr-career'] = array(
+		'title' => 'EDM Generator',
+		'page callback' => 'edm_generator_my_hr_career',
+		'access arguments' => array('administer edm module'),
+		'type' => MENU_CALLBACK,
+		'file' => 'edm_generator_my_hr_career.inc',
+	);
+	return $items;
+}
+
+/* starts for manipulating before node save */
+function edm_generator_node_presave($node) {
+	if ($node->type=='jobs'){
+		$company = node_load($node->field_company_ref['und'][0]['nid']);
+		$node->field_company['und'][0]['value'] = $company->title;
+	}
+	if ($node->type=='training_courses'){
+		//$company = node_load($node->field_trainining_company['und'][0]['nid']);
+		//$node->field_company['und'][0]['value'] = $company->title;
+	}
+	
+}
+/* ends for manipulating before node save */

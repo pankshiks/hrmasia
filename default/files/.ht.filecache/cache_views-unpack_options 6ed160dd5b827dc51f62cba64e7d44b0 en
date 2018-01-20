@@ -1,0 +1,42 @@
+O:8:"stdClass":4:{s:3:"cid";s:50:"unpack_options:6ed160dd5b827dc51f62cba64e7d44b0:en";s:7:"created";i:1515581042;s:6:"expire";i:0;s:4:"data";a:41:{s:8:"defaults";a:32:{s:6:"access";b:1;s:5:"cache";b:1;s:5:"query";b:1;s:5:"title";b:1;s:9:"css_class";b:1;s:19:"display_description";b:0;s:8:"use_ajax";b:1;s:23:"hide_attachment_summary";b:1;s:16:"hide_admin_links";b:1;s:5:"pager";b:1;s:13:"pager_options";b:1;s:8:"use_more";b:1;s:15:"use_more_always";b:1;s:13:"use_more_text";b:1;s:12:"exposed_form";b:1;s:20:"exposed_form_options";b:1;s:12:"link_display";b:1;s:8:"link_url";s:0:"";s:8:"group_by";b:1;s:12:"style_plugin";b:0;s:13:"style_options";b:0;s:10:"row_plugin";b:0;s:11:"row_options";b:0;s:6:"header";b:0;s:6:"footer";b:1;s:5:"empty";b:1;s:13:"relationships";b:1;s:6:"fields";b:0;s:5:"sorts";b:1;s:9:"arguments";b:1;s:7:"filters";b:1;s:13:"filter_groups";b:1;}s:5:"title";s:0:"";s:7:"enabled";b:1;s:15:"display_comment";s:0:"";s:9:"css_class";s:0:"";s:19:"display_description";s:0:"";s:8:"use_ajax";b:0;s:23:"hide_attachment_summary";b:0;s:16:"hide_admin_links";b:0;s:14:"items_per_page";i:10;s:6:"offset";i:0;s:9:"use_pager";b:0;s:8:"use_more";b:0;s:15:"use_more_always";b:0;s:13:"use_more_text";s:4:"more";s:12:"link_display";s:0:"";s:8:"link_url";s:0:"";s:8:"group_by";b:0;s:14:"field_language";s:22:"***CURRENT_LANGUAGE***";s:27:"field_language_add_to_query";i:1;s:6:"access";a:1:{s:4:"type";s:4:"none";}s:5:"cache";a:1:{s:4:"type";s:4:"none";}s:5:"query";a:2:{s:4:"type";s:11:"views_query";s:7:"options";a:0:{}}s:12:"exposed_form";a:2:{s:4:"type";s:5:"basic";s:7:"options";a:0:{}}s:5:"pager";a:2:{s:4:"type";s:4:"full";s:7:"options";a:0:{}}s:12:"style_plugin";s:9:"jump_menu";s:13:"style_options";a:2:{s:4:"hide";b:1;s:4:"path";s:3:"tid";}s:10:"row_plugin";s:6:"fields";s:11:"row_options";a:1:{s:22:"default_field_elements";b:0;}s:13:"exposed_block";b:0;s:6:"header";a:1:{s:3:"php";a:4:{s:2:"id";s:3:"php";s:5:"table";s:5:"views";s:5:"field";s:3:"php";s:10:"php_output";s:860:"<style>
+/* Areas of training block */
+#block-views-course-category-block-1{
+	width: 60%;
+	float: left;
+	margin-right: 10%;
+}
+#block-views-course-category-block-1 .title{
+	border-bottom: 2px solid #a5a5a5;
+	color: #be202e;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+#block-views-course-category-block-1 .area-cat{
+	width: 50%;
+	float: left;
+	margin-bottom: 0.5em;
+}
+
+#block-views-course-category-block-1 .area-cat a{
+	color: #000;
+}
+
+
+/* job level block */
+#block-views-course-category-block-2{
+	width: 30%;
+	float: left;
+}
+#block-views-course-category-block-2 .title{
+	border-bottom: 2px solid #a5a5a5;
+	color: #be202e;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+#block-views-course-category-block-2 .job-cat{
+	margin-bottom: 0.5em;	
+}
+#block-views-course-category-block-2 .job-cat a{
+	color: #000;
+}
+</style>";}}s:6:"footer";a:0:{}s:5:"empty";a:0:{}s:13:"relationships";a:0:{}s:6:"fields";a:2:{s:4:"name";a:8:{s:2:"id";s:4:"name";s:5:"table";s:18:"taxonomy_term_data";s:5:"field";s:4:"name";s:5:"label";s:0:"";s:5:"alter";a:2:{s:13:"word_boundary";b:0;s:8:"ellipsis";b:0;}s:19:"element_label_colon";b:0;s:23:"element_default_classes";b:0;s:16:"link_to_taxonomy";b:1;}s:3:"tid";a:7:{s:2:"id";s:3:"tid";s:5:"table";s:18:"taxonomy_term_data";s:5:"field";s:3:"tid";s:5:"label";s:0:"";s:7:"exclude";b:1;s:5:"alter";a:2:{s:10:"alter_text";b:1;s:4:"text";s:19:"taxonomy/term/[tid]";}s:19:"element_label_colon";b:0;}}s:5:"sorts";a:0:{}s:9:"arguments";a:0:{}s:13:"filter_groups";a:2:{s:8:"operator";s:3:"AND";s:6:"groups";a:1:{i:1;s:3:"AND";}}s:7:"filters";a:0:{}s:17:"block_description";s:17:"Areas of training";s:13:"block_caching";i:-1;}}

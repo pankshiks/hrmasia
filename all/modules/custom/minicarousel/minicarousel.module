@@ -1,0 +1,132 @@
+  <?php
+ /**
+* Implements hook_block_info().
+*/
+function minicarousel_block_info() {
+  $blocks = array();
+  $blocks['mini_carousel'] = array(
+    'info' => t('Mini Carousel'),
+  );
+  return $blocks;
+}
+
+/**
+* Implements hook_block_view().
+*/
+function minicarousel_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'mini_carousel':
+      $block['subject'] = '';
+      $block['content'] = _minicarousel_carousel_content();
+      break;
+  }
+  return $block;
+}
+function _minicarousel_carousel_content() {
+	drupal_add_js(drupal_get_path('module', 'minicarousel') .'/js/jcarousel.responsive.js');
+	drupal_add_js(drupal_get_path('module', 'minicarousel') .'/js/jquery.jcarousel.min.js');
+	drupal_add_css(drupal_get_path('module', 'minicarousel') .'/css/jcarousel.responsive.css');
+	
+	// query for fetching partners node
+	$nids = db_select('node', 'n')
+		->fields('n', array('nid'))
+		->fields('n', array('type'))
+		->condition('n.type', 'partners')
+    ->condition('n.status', 1)
+		->execute()
+		->fetchCol(); // returns an indexed array
+	
+	foreach ($nids as $nid) {
+		$nodedata = node_load($nid);
+		$imgpath = theme('image_style', array('path' => $nodedata->field_image['und'][0]['uri'], 'style_name' => 'partners_small'));
+		$imglink = $nodedata->field_link['und'][0]['value'];
+		$items[] = array(
+					'img'=>$imgpath,
+					'itemlink' =>$imglink
+				);
+	}
+  return theme('_minicarousel_carousel_content', array('items' => $items));
+}
+
+/**
+* Implements hook_theme().
+*/
+function minicarousel_theme() {
+$module_path = drupal_get_path('module', 'minicarousel');
+  $base = array(
+    'path' => "$module_path/theme",   
+  );
+  return array(
+    '_minicarousel_carousel_content' => $base + array(
+      'template' => 'minicarousel_block',
+      'variables' => array('items' => NULL),
+    ),   
+  ); 
+}
+
+/**
+ * Implements hook_webform_validation_validators().
+ */
+function minicarousel_webform_validation_validators() {
+  return array(
+    'validate_id' => array(
+      'name' => "Validate ID",
+      'component_types' => array(
+        'number',
+        'textfield',
+        'select',
+      ),
+    )
+  );
+}
+
+/**
+ * Implements hook_webform_validation_validate().
+ */
+function minicarousel_webform_validation_validate($validator_name, $items, $components, $rule) {
+  if ($items) {
+    switch ($validator_name) {
+      case 'validate_id':
+        $errors = array();
+        $last_array = array();
+        $empty_counter = 0;
+
+        foreach ($items as $key => $val) {
+          if(!empty($val)){
+           if($val == 4 || $val == 5){
+           }else{
+             $last_array[] = $val;
+           } 
+          // $last_array[] = $val;
+          }
+        }
+        //print_r($last_array);
+        //die();
+
+        $arrayCount = count($last_array);
+        //if($arrayCount > 3) {
+          //$errors[0] = t('You only allow to select 3 items');
+        //}
+
+        if($arrayCount == 0) {
+          $errors[1] = t('You cannot leave question 2 or 3 empty');
+        }
+        
+        if($arrayCount > 1 && ($last_array[0] == $last_array[1] || $last_array[0] == $last_array[2] || $last_array[1] == $last_array[2])){
+          $errors[2] = t('Please select top 3. You cannot choose the same value twice');
+        }
+
+        return $errors;
+        break;
+    }
+  }
+}
+
+function minicarousel_form_node_form_alter(&$form, &$form_state, $form_id) {  
+  
+  if (isset($form['field_job_summary']) && !isset($form['field_job_summary']['und']['0']['#format'])) {
+    $form['field_job_summary']['und']['0']['#format'] = "summery";
+  }
+}
+

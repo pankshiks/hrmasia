@@ -1,0 +1,174 @@
+ @media all and (max-width: 768px) {
+ 
+    .mobile-content{
+    display: block;
+}
+#block-tb-megamenu-menu-article-filter{
+    display: none;
+}
+/*--------------Slider menu-----------------*/
+
+.sidr{
+    background: $EAC018;
+    box-shadow: none;
+}
+
+a#sidr-0-button{
+    display: block;
+    color: $EAC014;
+    @include fontfamilyversionfive;
+    text-align: center;
+    padding: 18px 0;
+    text-transform: uppercase;
+}
+.sidr ul{
+    border:none;
+    background: url(../images/mobile-logo.png) no-repeat 25px 25px;
+    padding-top: 76px;
+}
+.sidr ul li{
+    border: none;
+    font-size: 17px;
+    line-height: 59px;
+
+}
+.sidr ul li a{
+    color: $EAC014;
+     @include fontfamilyversionfive;
+     border-bottom: 1px solid $EAC019;
+     padding: 0 15px 0 25px;
+}
+.sidr ul li a:hover{
+    box-shadow: none;
+    line-height: 59px;
+    color: $EAC002;
+}
+#logo-floater img{
+    width: 90%;
+}
+#footer, #container, #highlighted, .mainmenu, #content-bottom {
+    width: 88%;
+    padding: 0 6%;
+ }
+
+ #header {
+    width: 94%;
+    padding: 0 3%;
+ }
+ #header .region-header{
+     width: 79%;
+ }
+ #block-search-form{
+     width: 67%;
+     
+ }
+ #block-block-1{
+     width: 20%;
+ }
+ #sidebar-first,
+#sidebar-second{
+    @include column(24);
+    @include overide-grid;
+    display: none;
+}
+#center-outer {
+    @include column(24);
+    @include overide-grid;
+}
+
+body.sidebar-first  #center-outer {
+    @include column(24);
+        @include overide-grid;
+}
+body.sidebar-second #center-outer {
+    @include column(24);
+    @include overide-grid;
+}
+.sidebar .block{
+    max-width: 328px;
+    float: left;
+    height:360px;
+    &.sidebar-last{
+        float:right;
+        text-align: left;
+    }
+}
+
+/*-------------------Homepage Slider----------------------*/
+
+/*.region-header{
+    width: 72.02441%;
+}
+#block-block-1{
+    width:22.5%;
+}
+#block-search-form{
+    width:66%;
+}
+#search-block-form .form-item .form-text{
+    width:91%;
+}*/
+/*-------------------Homepage Slider----------------------*/
+
+#block-views-featured-slider-block-1{
+    display: none;
+}
+#block-views-featured-slider-block{
+
+    .views-field-nothing{
+        .title-with-body{
+            background: $EAC001;
+            
+            top: inherit !important;
+            bottom:0;
+            left:0;
+            width:86%;
+            max-width:100%;
+            height: auto;
+            padding: 15px 8%;
+            .slide-title{
+
+                font-size: 25px;
+                line-height: 28px;
+                margin-bottom:15px;
+                a{
+                    color:$EAC011;
+                }
+            }
+            h4{
+                margin: 0;
+                @include fontfamilyversionfive;
+                font-size: 14px;
+                color: $EAC011;
+                margin-bottom:10px;
+
+                span{
+        border-top: none;
+        padding-top:0;
+                }
+            }
+        }
+    }
+    .flex-direction-nav{
+        display: block;
+        a{
+            top:inherit;
+            bottom: 13%;
+            background: url(../images/slider-nav.png) no-repeat left top;
+            width:13px;
+            height: 16px;
+            &.flex-prev{
+                background-position: 0 -16px;
+                &:hover{
+                    background-position: 0 -48px;
+                }
+            }
+            &.flex-next{
+                background-position: 0 0;
+                              &:hover{
+                    background-position: 0 -32px;
+                }
+            }
+        }
+    }
+}

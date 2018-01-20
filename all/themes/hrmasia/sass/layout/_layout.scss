@@ -1,0 +1,117 @@
+ // Remove the definition below for a pixel-based layout
+$total-width: 100%;
+
+#header, #center, #footer, #container, #highlighted, .mainmenu, #content-bottom, #breadcrumb {
+    width: 100%;
+    max-width: 1005px;
+    margin: 0 auto;
+ }
+ #breadcrumb{
+     margin-bottom: 10px;
+     @include fontfamilyversionfive;
+     text-transform: uppercase;
+ }
+ #fix-header{
+     position: fixed;
+     width:100%;
+     background: #fff;
+     top:0;
+     z-index: 100;
+ }
+ #content-bottom{
+     clear:both;
+     overflow: hidden;
+     margin-top: 20px;
+ }
+#sidebar-first,
+#sidebar-second{
+    @include column(8);
+}
+#sidebar-first{
+    margin-left: 0;
+    float: left;
+}
+#sidebar-second{
+    margin-right: 0;
+    float: right;
+}
+.sidebar h2.title{
+    margin-top:0;
+}
+#center-outer {
+    @include column(25);
+    margin: 0;
+    width:100%;
+    @include box-border;
+    background: $EAC011;
+    #center{
+        padding: 24px 4%;
+        width: 92%;
+    }
+    
+    
+}
+body.no-sidebars{
+    #center-outer {
+        #center{
+        padding: 24px 3%;
+        width: 94%;
+    }}
+}
+body.front{
+    #center-outer {
+        border:none;
+    background: none;;
+    #center{
+        padding: 0;
+        width: 100%;
+    }
+    
+    
+}
+}
+body.two-sidebars #center-outer {
+    @include column(9);
+}
+body.sidebar-first  #center-outer {
+    @include column(17);
+    margin-right: 0;
+    width: 67.02441%;
+}
+body.sidebar-second #center-outer {
+    @include column(17);
+    margin-left: 0;
+    width: 67.02441%;
+}
+
+/*--------------Content bg for not front pages--------------*/
+
+
+
+
+#header-wrapper{
+    height: 76px;
+  
+}
+#mainmenu{
+    background: #f2f2f2 url(../images/menu-bg.jpg) repeat-x left top;
+    border-top:1px solid #e8e8e8;
+    border-bottom:1px solid #e8e8e8;
+    height: 53px;
+
+}
+#main-wrapper{
+    background: $EAC003;
+    padding: 20px 0;
+    margin-top: 131px;
+}
+body.not-front #main-wrapper{
+    padding-top: 7px;
+}
+#footer-wrapper{
+    background: $EAC001;
+    @include fontfamilyversionthree;
+}
+
+.mobile-content{
+    display: none;

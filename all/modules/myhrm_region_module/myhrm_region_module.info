@@ -1,0 +1,6 @@
+ name = MYHRM Region Module
+description = This module is used to desplay My profile, Feature article, Evenets listing and Disscussion forum.
+core = 7.x
+package = MyHrm
+
+scripts[] = js/script.js

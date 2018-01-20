@@ -1,0 +1,42 @@
+O:8:"stdClass":4:{s:3:"cid";s:50:"unpack_options:ae86b8f57ff470ddfac0606dbfe2279b:en";s:7:"created";i:1515581042;s:6:"expire";i:0;s:4:"data";a:38:{s:5:"title";s:7:"Courses";s:7:"enabled";b:1;s:15:"display_comment";s:0:"";s:9:"css_class";s:0:"";s:19:"display_description";s:0:"";s:8:"use_ajax";b:1;s:23:"hide_attachment_summary";b:0;s:16:"hide_admin_links";b:0;s:14:"items_per_page";i:10;s:6:"offset";i:0;s:9:"use_pager";b:0;s:8:"use_more";b:0;s:15:"use_more_always";b:0;s:13:"use_more_text";s:4:"more";s:12:"link_display";s:0:"";s:8:"link_url";s:0:"";s:8:"group_by";b:0;s:14:"field_language";s:22:"***CURRENT_LANGUAGE***";s:27:"field_language_add_to_query";i:1;s:6:"access";a:1:{s:4:"type";s:4:"perm";}s:5:"cache";a:1:{s:4:"type";s:4:"none";}s:5:"query";a:2:{s:4:"type";s:11:"views_query";s:7:"options";a:0:{}}s:12:"exposed_form";a:2:{s:4:"type";s:22:"better_exposed_filters";s:7:"options";a:4:{s:10:"autosubmit";b:1;s:3:"bef";a:2:{s:7:"general";a:2:{s:15:"allow_secondary";i:0;s:15:"secondary_label";s:16:"Advanced options";}s:4:"sort";a:2:{s:10:"bef_format";s:7:"default";s:8:"advanced";a:7:{s:11:"collapsible";i:0;s:17:"collapsible_label";s:12:"Sort options";s:7:"combine";i:0;s:15:"combine_rewrite";s:0:"";s:5:"reset";i:0;s:11:"reset_label";s:0:"";s:12:"is_secondary";i:0;}}}s:14:"input_required";i:0;s:26:"text_input_required_format";s:9:"full_html";}}s:5:"pager";a:2:{s:4:"type";s:4:"full";s:7:"options";a:0:{}}s:12:"style_plugin";s:7:"default";s:13:"style_options";a:2:{s:17:"default_row_class";b:0;s:17:"row_class_special";b:0;}s:10:"row_plugin";s:6:"fields";s:11:"row_options";a:0:{}s:13:"exposed_block";b:0;s:6:"header";a:1:{s:3:"php";a:4:{s:2:"id";s:3:"php";s:5:"table";s:5:"views";s:5:"field";s:3:"php";s:10:"php_output";s:453:"<style>
+.course-row-wrapper {
+	padding: 2em 0;
+	border-bottom: 1px solid #dddddd;
+}
+.course-title {
+	margin-bottom: 0.5em;
+}
+.course-title a {
+	font-size: 17px;
+	color: #be202e;
+	font-weight: bold;
+}
+.course-company {
+	margin-bottom: 1em;
+}
+.course-company a {
+	font-size: 14px;
+	color: #242424;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.course-no{
+
+}
+.course-mail{
+
+}
+.course-url{
+
+}
+.course-area{
+
+}
+</style>";}}s:6:"footer";a:0:{}s:5:"empty";a:0:{}s:13:"relationships";a:0:{}s:6:"fields";a:5:{s:5:"title";a:7:{s:2:"id";s:5:"title";s:5:"table";s:4:"node";s:5:"field";s:5:"title";s:5:"label";s:0:"";s:7:"exclude";b:1;s:5:"alter";a:2:{s:13:"word_boundary";b:0;s:8:"ellipsis";b:0;}s:19:"element_label_colon";b:0;}s:24:"field_trainining_company";a:6:{s:2:"id";s:24:"field_trainining_company";s:5:"table";s:35:"field_data_field_trainining_company";s:5:"field";s:24:"field_trainining_company";s:5:"label";s:0:"";s:7:"exclude";b:1;s:19:"element_label_colon";b:0;}s:23:"field_register_link_url";a:7:{s:2:"id";s:23:"field_register_link_url";s:5:"table";s:34:"field_data_field_register_link_url";s:5:"field";s:23:"field_register_link_url";s:5:"label";s:0:"";s:7:"exclude";b:1;s:19:"element_label_colon";b:0;s:17:"click_sort_column";s:3:"url";}s:17:"field_course_type";a:6:{s:2:"id";s:17:"field_course_type";s:5:"table";s:28:"field_data_field_course_type";s:5:"field";s:17:"field_course_type";s:5:"label";s:0:"";s:7:"exclude";b:1;s:19:"element_label_colon";b:0;}s:7:"nothing";a:6:{s:2:"id";s:7:"nothing";s:5:"table";s:5:"views";s:5:"field";s:7:"nothing";s:5:"label";s:0:"";s:5:"alter";a:1:{s:4:"text";s:411:"<div class="course-row-wrapper">
+	<div class="course-title">[title]</div>
+	<div class="course-company">[field_trainining_company]</div>
+	<div class="course-no">Training Provider Contact Number: </div>
+	<div class="course-mail">Training Provider Email: </div>
+	<div class="course-url">Course URL: [field_register_link_url]</div>
+	<div class="course-area">Area of Training: [field_course_type]</div>
+</div>";}s:19:"element_label_colon";b:0;}}s:5:"sorts";a:3:{s:5:"title";a:5:{s:2:"id";s:5:"title";s:5:"table";s:4:"node";s:5:"field";s:5:"title";s:7:"exposed";b:1;s:6:"expose";a:1:{s:5:"label";s:12:"Course Title";}}s:28:"field_trainining_company_nid";a:5:{s:2:"id";s:28:"field_trainining_company_nid";s:5:"table";s:35:"field_data_field_trainining_company";s:5:"field";s:28:"field_trainining_company_nid";s:7:"exposed";b:1;s:6:"expose";a:1:{s:5:"label";s:12:"Company Name";}}s:7:"created";a:6:{s:2:"id";s:7:"created";s:5:"table";s:4:"node";s:5:"field";s:7:"created";s:5:"order";s:4:"DESC";s:7:"exposed";b:1;s:6:"expose";a:1:{s:5:"label";s:11:"Posted Date";}}}s:9:"arguments";a:0:{}s:13:"filter_groups";a:2:{s:8:"operator";s:3:"AND";s:6:"groups";a:1:{i:1;s:3:"AND";}}s:7:"filters";a:3:{s:6:"status";a:6:{s:2:"id";s:6:"status";s:5:"table";s:4:"node";s:5:"field";s:6:"status";s:5:"value";s:1:"1";s:5:"group";i:1;s:6:"expose";a:6:{s:11:"operator_id";s:0:"";s:5:"label";s:9:"Published";s:8:"operator";s:9:"status_op";s:10:"identifier";s:6:"status";s:8:"required";b:1;s:14:"remember_roles";a:7:{i:2;s:1:"2";i:1;i:0;i:3;i:0;i:16;i:0;i:21;i:0;i:26;i:0;i:31;i:0;}}}s:4:"type";a:4:{s:2:"id";s:4:"type";s:5:"table";s:4:"node";s:5:"field";s:4:"type";s:5:"value";a:1:{s:16:"training_courses";s:16:"training_courses";}}s:19:"field_job_level_tid";a:7:{s:2:"id";s:19:"field_job_level_tid";s:5:"table";s:26:"field_data_field_job_level";s:5:"field";s:19:"field_job_level_tid";s:7:"exposed";b:1;s:6:"expose";a:4:{s:11:"operator_id";s:22:"field_job_level_tid_op";s:5:"label";s:27:"Job level (field_job_level)";s:8:"operator";s:22:"field_job_level_tid_op";s:10:"identifier";s:19:"field_job_level_tid";}s:4:"type";s:6:"select";s:10:"vocabulary";s:9:"job_level";}}}}

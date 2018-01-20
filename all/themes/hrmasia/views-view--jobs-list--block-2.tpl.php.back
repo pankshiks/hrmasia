@@ -1,0 +1,146 @@
+ <?php
+
+/**
+ * @file
+ * Main view template.
+ *
+ * Variables available:
+ * - $classes_array: An array of classes determined in
+ *   template_preprocess_views_view(). Default classes are:
+ *     .view
+ *     .view-[css_name]
+ *     .view-id-[view_name]
+ *     .view-display-id-[display_name]
+ *     .view-dom-id-[dom_id]
+ * - $classes: A string version of $classes_array for use in the class attribute
+ * - $css_name: A css-safe version of the view name.
+ * - $css_class: The user-specified classes names, if any
+ * - $header: The view header
+ * - $footer: The view footer
+ * - $rows: The results of the view query, if any
+ * - $empty: The empty text to display if the view is empty
+ * - $pager: The pager next/prev links to display, if any
+ * - $exposed: Exposed widget form/info to display
+ * - $feed_icon: Feed icon to display, if any
+ * - $more: A link to view more, if any
+ *
+ * @ingroup views_templates
+ */
+?>
+<div class="<?php print $classes; ?> testing">
+<?php
+if (isset ( $_GET ['title'] )) {
+	dpm ( "With TItle Search" );
+}
+?>
+  <?php print render($title_prefix); ?>
+  <?php if ($title): ?>
+    <?php print $title; ?>
+  <?php endif; ?>
+  <?php print render($title_suffix); ?>
+  <?php if ($header): ?>
+    <div class="view-header">
+      <?php print $header; ?>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($exposed): ?>
+    <div class="view-filters">
+      <?php print $exposed; ?>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($attachment_before): ?>
+    <div class="attachment attachment-before">
+      <?php print $attachment_before; ?>
+    </div>
+  <?php endif; ?>
+
+  <?php
+		if (! isset ( $_GET ['title'] )) {
+			?>
+      		<div class="view-content">
+      			<?php print $rows; ?>
+    		</div>
+	<?php
+		} else {
+			dpm ( "With TItle Search" );
+			$title = $_GET ['title'];
+			
+			$rows_query = db_select ( 'node', 'n' )
+				->join('field_data_field_jobs_premium_type', 't', 'n.nid = t.entity_id')
+				->condition ( 'n.title', '%' . $title . '%', 'LIKE')
+				->condition ( 'n.type', 'jobs', '=' )
+				->condition ( 't.field_jobs_premium_type_tid', '321', '=' )
+				->fields ( 'n', array('nid','title') )
+				//->orderBy ( 'created', 'DESC' )
+				->execute ()
+				->fetchAllKeyed ();
+			
+			foreach ( $rows_query as $id => $data ) {
+				$node = node_load ( $id );
+				?>
+				<div class="views-row">
+      
+  				<div class="views-field views-field-nothing-1">
+		<div class="views-field-title">
+						<?php print $node->title; ?>
+					</div>
+		<div class="job-detail">
+						<?php print date('D M Y', $node->field_posted_date['und'][0]['value']); ?> 
+						- <?php print $node->field_company['und'][0]['value']; ?> 
+						- <?php print $node->field_region['und'][0]['value']; ?>
+					</div>
+		<div class="job-bottom">
+			<div class="job-left">
+							<?php print $node->field_job_summary['und'][0]['value']; ?>
+							<br />
+							- TEST : <?php print $node->field_point1['und'][0]['value']; ?>
+							<br />
+							- <?php print $node->field_point2['und'][0]['value']; ?>
+							<br />
+							- <?php print $node->field_point3['und'][0]['value']; ?>
+						</div>
+			<div class="job-right">
+							<?php
+				$company = node_load ( $node->field_company_ref ['und'] [0] ['nid'] );
+				$company_logourl = $company->field_image ['und'] [0] ['uri'];
+				?>
+							<img
+					src="<?php print image_style_url($style, $company_logourl); ?>">
+			</div>
+		</div>
+	</span>
+	</div></div>
+		<?php
+			}
+		}
+		?>
+
+  <?php if ($pager): ?>
+    <?php print $pager; ?>
+  <?php endif; ?>
+
+  <?php if ($attachment_after): ?>
+    <div class="attachment attachment-after">
+      <?php print $attachment_after; ?>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($more): ?>
+    <?php print $more; ?>
+  <?php endif; ?>
+
+  <?php if ($footer): ?>
+    <div class="view-footer">
+      <?php print $footer; ?>
+    </div>
+  <?php endif; ?>
+
+  <?php if ($feed_icon): ?>
+    <div class="feed-icon">
+      <?php print $feed_icon; ?>
+    </div>
+  <?php endif; ?>
+
+</div><?php /* class view */ ?

@@ -1,0 +1,13 @@
+ name = userpoints2 Service
+description = Exposes userpoints2 functionality via XML-RPC
+package = userpoints2
+dependencies[] = userpoints2
+dependencies[] = services
+core = 7.x
+files[]=userpoints2_service.test
+
+; Information added by drupal.org packaging script on 2011-08-23
+version = "7.x-1.0"
+core = "7.x"
+project = "userpoints2"
+datestamp = "1314138121"

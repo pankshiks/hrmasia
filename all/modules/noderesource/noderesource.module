@@ -1,0 +1,154 @@
+<?php
+// noderesource.module
+/** Gets a node object by id.
+*
+* @param int $id
+* @return object
+*/
+function noderesource_get_node($nid) {
+  return db_query('SELECT * FROM {node} WHERE nid=:nid', array(':nid' => $nid))
+           ->fetchAll();
+}
+
+/** Writes a node to the database
+*
+* @param object $node
+* @return void
+*/
+function noderesource_write_node($node) {
+  $primary_key = !empty($node->nid) ? array('nid') : NULL;
+  drupal_write_record('node', $node, $primary_key);
+}
+
+/**
+* Deletes a node from the database.
+*
+* @param int $id
+* @return void
+*/
+function noderesource_delete_node($nid) {
+  db_query('DELETE FROM {node} WHERE nid=:nid', array(':nid' => $nid));
+}
+
+/**
+* Implementation of hook_services_resources().
+*/
+function noderesource_services_resources() {
+  return array(
+    'mix' => array(
+      'retrieve' => array(
+        'help' => 'Retrieves a node',
+        'file' => array('file' => 'inc', 'module' => 'noderesource'),
+        'callback' => '_noderesource_retrieve',
+        'access callback' => '_noderesource_access',
+        'access arguments' => array('view'),
+        'access arguments append' => TRUE,
+        'args' => array(
+          array(
+            'name' => 'nid',
+            'type' => 'int',
+            'description' => 'The id of the node to get',
+            'source' => array('path' => '0'),
+            'optional' => FALSE,
+          ),
+        ),
+      ),
+      'create' => array(
+        'help' => 'Creates a node',
+        'file' => array('file' => 'inc', 'module' => 'noderesource'),
+        'callback' => '_noderesource_create',
+        'access arguments' => array('node resource create'),
+        'access arguments append' => FALSE,
+        'args' => array(
+          array(
+            'name' => 'data',
+            'type' => 'struct',
+            'description' => 'The node object',
+            'source' => 'data',
+            'optional' => FALSE,
+          ),
+        ),
+      ),
+      'update' => array(
+        'help' => 'Updates a node',
+        'file' => array('file' => 'inc', 'module' => 'noderesource'),
+        'callback' => '_noderesource_update',
+        'access callback' => '_noderesource_access',
+        'access arguments' => array('update'),
+        'access arguments append' => TRUE,
+        'args' => array(
+          array(
+            'name' => 'nid',
+            'type' => 'int',
+            'description' => 'The id of the node to update',
+            'source' => array('path' => '0'),
+            'optional' => FALSE,
+          ),
+          array(
+            'name' => 'data',
+            'type' => 'struct',
+            'description' => 'The node data object',
+            'source' => 'data',
+            'optional' => FALSE,
+          ),
+        ),
+      ),
+      'delete' => array(
+        'help' => 'Deletes a node',
+        'file' => array('file' => 'inc', 'module' => 'noderesource'),
+        'callback' => '_noderesource_delete',
+        'access callback' => '_noderesource_access',
+        'access arguments' => array('delete'),
+        'access arguments append' => TRUE,
+        'args' => array(
+          array(
+            'name' => 'nid',
+            'type' => 'int',
+            'description' => 'The id of the node to delete',
+            'source' => array('path' => '0'),
+            'optional' => FALSE,
+          ),
+        ),
+      ),
+      'index' => array(
+        'help' => 'Retrieves a listing of nodes',
+        'file' => array('file' => 'inc', 'module' => 'noderesource'),
+        'callback' => '_noderesource_index',
+        'access callback' => 'user_access',
+        'access arguments' => array('access content'),
+        'access arguments append' => FALSE,
+        'args' => array(
+          array(
+            'name' => 'page',
+            'type' => 'int',
+            'description' => '',
+            'source' => array(
+              'param' => 'page',
+            ),
+            'optional' => TRUE,
+            'default value' => 0,
+          ),
+          array(
+           'name' => 'parameters',
+           'type' => 'array',
+           'description' => '',
+           'source' => 'param',
+           'optional' => TRUE,
+           'default value' => array(),
+          ),
+        ),
+      ),
+    ),
+    'taxo' => array(
+      'index' => array(
+        'help' => 'Retrieves a listing of taxo',
+        'file' => array('file' => 'inc', 'module' => 'noderesource'),
+        'callback' => '_noderesource_taxoindex',
+        'access callback' => 'user_access',
+        'access arguments' => array('access content'),
+        'access arguments append' => FALSE
+      ),
+    ),
+  );
+}
+?>

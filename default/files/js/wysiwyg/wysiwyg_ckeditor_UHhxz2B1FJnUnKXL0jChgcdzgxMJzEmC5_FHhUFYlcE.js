@@ -1,0 +1,1 @@
+window.CKEDITOR_BASEPATH = '/hrmasia/sites/all/libraries/ckeditor/';

@@ -1,0 +1,52 @@
+ 
+div.userpoints2-view-transaction ul.userpoints2-links {
+    padding-left: 0;
+}
+
+div.userpoints2-view-transaction ul.userpoints2-links li.first {
+    padding-left: 0;
+}
+
+div.block-userpoints2 div.userpoints2-total {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+div.block-userpoints2 ul.userpoints2-links li {
+    display: block;
+}
+
+td.userpoints2-transactions-field-points {
+  text-align: right;
+}
+
+table.userpoints2-myuserpoints2-total td {
+  width: 50%;
+}
+
+table.userpoints2-myuserpoints2-total {
+  width: 50%;
+  min-width: 300px;
+}
+
+.userpoints2-view-transaction {
+  clear: both;
+  margin: 1em 0;
+}
+.userpoints2-view-transaction h3 {
+  border-bottom: 1px solid #ccc;
+}
+.userpoints2-view-transaction dl {
+  margin: 0 0 1.5em 0;
+}
+.userpoints2-view-transaction dt {
+  margin: 0 0 0.2em 0;
+  font-weight: bold;
+}
+.userpoints2-view-transaction dd {
+  margin: 0 0 1em 0;
+}
+
+div.form-item-entity-type, div.form-item-entity-id {
+    display: inline;
+}

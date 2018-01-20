@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the hrm feature types feature.
+ */
+
+include_once 'hrm_feature_types.features.inc';

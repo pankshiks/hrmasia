@@ -1,0 +1,21 @@
+ 
+.node-type-news .post-summary, .node-type-article .post-summary {
+clear: both;
+}
+
+
+
+/**************** arjun css 10-10-2014******************/
+.page-my-communities div#tabs-wrapper{
+    padding: 24px 4% 0;
+	width: 92%;
+	border: 1px solid #dddddd;
+	border-radius: 3px;
+	background: white;
+	border-bottom: 0;
+}
+
+.page-my-communities div.region-content{
+    border-top: 0 !important;
+	padding-top: 0 !important;
+}

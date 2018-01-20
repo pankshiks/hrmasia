@@ -1,0 +1,145 @@
+ 
+.page-hrm-awards, .page-upcoming-congress{
+    #center{
+        background: none !important;
+    }
+}
+
+.view-hrm-awards {
+    .views-row{
+        position: relative;
+        .views-field-nothing{
+            position: absolute;
+            top: 135px;
+            text-align: center;
+            width:100%;
+            text-align: center;
+            .awarddesc{
+                color: $EAC011;
+                font-size: 20px;
+                margin: 10px 0;
+            }
+            .awardlink{
+                margin-top: 30px;
+                ul{
+                    margin: 0;
+                    padding: 0;
+                    li{
+                        margin: 0;
+                        padding: 0;
+                        list-style: none;
+                        list-style-image: none;
+                        display: inline;
+                        margin-right: 5px;
+                        a{
+                            border: 1px solid $EAC011;
+                            border-radius: 4px;
+                            padding: 13px 40px;
+                            @include fontfamilyversionfive;
+                            text-transform:uppercase;
+                            color:$EAC011;
+                            &:hover{
+                                background: $EAC015;
+                                color:$EAC011;
+                                border: 1px solid $EAC015;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+        .views-field-field-sponsor, .views-field-field-image-1{
+            max-width: 492px;
+            width: 46%;
+            text-align: center;
+            float: left;
+            .field-collection-view{
+                display: inline-block;
+                margin-right: 10px;
+                margin-top: 15px;
+            }
+        }
+        .views-field-field-image-1{
+            float: right;
+            span.views-label{
+                display: block;
+            }
+            .field-content{
+                display: inline-block;
+                margin-right: 10px;
+                margin-top: 15px;
+            }
+        }
+    }
+    .views-field-field-image{
+        margin-bottom: 30px;
+    }
+}
+
+/*--------------------------Upcoming Events------------------------*/
+
+.upcoming-events{
+    margin-bottom: 40px;
+    clear:both;
+    overflow: hidden;
+    border-bottom: 1px solid $EAC023;
+    .views-row{
+        width: 295px;
+        float: left;
+        margin-right: 28px;
+        &.views-row-last{
+            margin-right: 0;
+        }
+        .views-field-nothing{
+            padding: 10px 5%;
+            h2.title{
+                font-size: 20px;
+                line-height: 22px;
+                margin-top: 0;
+            }
+            .congress-sponsor{
+                margin-top: 15px;
+                span{
+                    display: block;
+                    margin-bottom:10px;
+                }
+                .field-collection-view{
+                    display: inline-block;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+/*---------------------Past Events------------------------*/
+
+#block-views-5aa80c7f17536bb5d7f74548a95bf4dd{
+       h2.title{
+        @include fontfamilyversionfive;
+        font-size: 14px;
+        margin-top:0;
+    } 
+}
+.past-events{
+
+    .views-row{
+        max-width: 492px;
+        width: 46%;
+        padding: 14px 1.5% 12px 1.5%;
+        float: left;
+        background: $EAC011;
+        margin-bottom: 21px;
+        &.views-row-even{
+            float: right;
+        }
+        .views-field-field-image{
+            float: left;
+            margin-right: 2.5%;
+        }
+        .views-field-title{
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+    }

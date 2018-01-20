@@ -1,0 +1,32 @@
+ 
+/* ==========================================================================
+Links
+========================================================================== */
+a{
+color: $EAC002;
+text-decoration: none;
+outline: none;
+outline: 0;
+&:hover{
+  color: $EAC002;
+}
+}
+/*
+* Addresses `outline` inconsistency between Chrome and other browsers.
+*/
+
+a:focus{
+    outline: 0;
+}
+* { _noFocusLine: expression(this.hideFocus=true); };
+/*
+* Improves readability when focused and also mouse hovered in all browsers.
+*/
+
+a:active,
+a:hover {
+    outline: 0;
+
+}
+a img {outline : none;
+border: none;

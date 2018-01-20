@@ -1,0 +1,292 @@
+ .content-padding{
+    padding: 0 2.5%;
+    &.social-share-post{
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+.acticle-top{
+    border-bottom: 1px solid $EAC019;
+    padding-top:15px;
+    .post-category{
+        margin-bottom: 12px;
+        a{
+            @include fontfamilyversionfive;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+    }
+    .post-title{
+        h1{
+            margin: 0 0 12px 0;
+            
+        }
+    }
+    .post-summary{
+        @include fontfamilyversiontwo;
+        color: $EAC013;
+    }
+    .author-date{
+        color: $EAC013;
+        font-size: 14px;
+        @include fontfamilyversionfour;
+        span{
+            display: inline-flex;
+        }
+    }
+
+}
+.related-articles{
+    margin-bottom:28px;
+    border-bottom: 1px solid $EAC019;
+    padding: 0 2.5%;
+    .flexslider{
+        border: none;
+        border-radius:0;
+        box-shadow: none;
+        margin: 0;
+        ul.slides{
+
+            li{
+
+                padding: 20px 0;
+                height: 55px;
+                .views-field-title{
+                    font-size: 14px;
+                    padding: 0 9%;
+                    img{
+                        width: auto !important;
+                        border: 1px solid $EAC019;
+
+                    }
+                }
+                &.views-row-odd{
+                    border-right: 1px solid $EAC019;
+                    img{
+                        float: left;
+                        margin-right: 10px;
+                    }
+                }
+                &.views-row-even{
+                    .views-field-title{
+                        text-align: right;
+
+                    }
+                    img{
+                        float: right;
+                        margin-left: 10px;
+                    }
+                }
+                a.active{
+                    color: $EAC002;
+                }
+            }
+        }
+    }
+    .flexslider .flex-direction-nav a, 
+    .flexslider .flex-direction-nav a{
+        display: block !important;
+        opacity: 1;
+        width: 17px;
+        height: 30px;
+        top: 57%;
+        text-indent: 9999px;
+    }
+    .flex-direction-nav .flex-next{
+        right: 0;
+        background: url(../images/related-next.png) left top;
+    }
+    .flex-direction-nav .flex-prev{
+        left: 0;
+        background: url(../images/related-prev.png) left top;
+    }
+    .flex-direction-nav a:before{
+        content:inherit !important;
+    }
+}
+
+.subscribe-block{
+    background: $EAC019;
+    padding:17px 2.5%;
+    margin-top: 15px;
+    .subscribebutton{
+        margin-top: 20px;
+        a{
+            border: none;
+            @include fontfamilyversionfive;
+            font-size: 14px;
+            background: $EAC015;
+            padding: 10px 16px;
+            text-transform: uppercase;
+            color: $EAC011;
+            &:hover{
+                color: $EAC011; 
+                background: $EAC012;
+            }
+        }
+    }
+    .item-list{
+        ul{
+            margin: 0;
+            padding: 0;
+            li{
+                list-style: none;
+                list-style-image: none;
+                margin:0;
+                padding: 0;
+            }
+        }
+    }
+}
+#disqus_thread{
+    padding: 0 2.5%;
+}
+
+
+/*------------------Custom Job Page--------------*/
+
+h1.job-title{
+    color: $EAC006;
+    margin-top: 30px;
+}
+#views-exposed-form-jobs-list-page,
+#views-exposed-form-courses-page,
+#views-exposed-form-jobs-list-page-2,
+#views-exposed-form-jobs-list-page-1{
+
+    .views-exposed-form{
+        .form-submit{
+            margin-top: 0;
+        }
+        margin-bottom: 25px;
+        .compact-form-label{
+            top: 15px;
+            left: 13px;
+            @include fontfamilyversionfour;
+        }
+        .form-text{
+            border:1px solid $EAC022;
+            height: 33px;
+            border-radius: 4px;
+            @include fontfamilyversionfour;
+            padding:0 13px;
+            background: $EAC003;
+        }
+    }
+}
+.node-type-jobs{
+    #center{
+        background: none !important;
+        #tabs-wrapper{
+            display: none;
+        }
+        .custom-job-page{
+            background: $EAC011;
+            border-top: 2px solid $EAC021;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            h1{
+                line-height: 26px !important;
+            }
+        }
+    }
+}
+.applynow{
+    margin-top: 50px;
+}
+.post-top{
+    margin-bottom: 15px;
+    .post-top-left{
+        width: 70%;
+        float: left;
+        @include fontfamilyversionfour;
+        font-size: 12px;
+        color: $EAC013;
+        .post-email{
+            margin-top: 20px;
+        }
+    }
+    .post-image{
+        width: 30%;
+        float: right;
+        text-align: right;
+        margin-top: 15px;
+    }
+}
+
+
+/*--------------------Job Listing Page-----------------*/
+
+
+.page-node-347{
+    .region-content{
+
+        ul.quicktabs-tabs {
+display: none;
+
+
+        }
+
+    }
+}
+
+
+.view-jobs-list,
+.view-courses{
+    .views-row{
+        padding: 10px 2.5%;
+        border-top: 2px solid $EAC003;
+        &:hover{
+            background: #f7eee7;
+            border-top: 2px solid $EAC021;
+        }
+        .views-field-title{
+            font-size: 17px;
+            @include fontfamilyversiontwo;
+            margin-bottom: 10px;
+        }
+    }
+    .views-field-nothing{
+        clear: both;
+        overflow: hidden;
+        .job-left{
+            width: 70%;
+            float: left;
+            .job-detail{
+                font-size: 13px;
+                @include fontfamilyversionfour;
+                color: $EAC013;
+
+            }
+        }
+        .job-right{
+            width: 30%;
+            float: right;
+            text-align: right;
+        }
+    }
+    .item-list{
+        clear:both;
+        background: #e5e5e5;
+        padding: 12px 0;
+        ul.pager{
+            margin: 0;
+        }
+    }
+}
+
+/*-------------template changes for new full page--------------*/
+/*.node-news{
+    .content{
+        padding-top: 10px;
+    }
+}*/
+.node-type-news{
+    .social-share-post{
+        text-align: right;
+    }
+.post-summary{
+            @include fontfamilyversiontwo;
+        color: $EAC013;
+}

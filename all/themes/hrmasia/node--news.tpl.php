@@ -56,8 +56,32 @@
  </div>
     <div class="post-summary content-padding"> <?php print render($node->field_news_summary['und'][0]['value']);  ?> </div>
         
-      
-    	<div class="post-body"> <?php print render($content['body']); ?> </div>
+    <?php   
+
+      if (isset($node->body['und']) && !empty($node->body['und'])) {
+        $ads_array = explode("<p>", $node->body['und'][0]['safe_value']);
+
+        $ad_count = 3;
+        foreach ($ads_array as $key => $value) {
+          if($key % 4 == 0 && $key > 0){
+            /*$ads_array[$key] = $value."<div id='div-gpt-ad-1456419201166-".$ad_count."'>
+                  <script type='text/javascript'>
+                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1456419201166-".$ad_count."'); });
+                  </script>
+                  </div>";
+                  $ad_count++;*/
+
+            $ads_array[$key] = $value.'<div style ="width:100%"class="mpu-size ad-'.$ad_count.'"><img src="/hrmasia/sites/default/files/field/images/92300732.jpg"></div>';
+                  $ad_count++;
+          }
+        }
+        $node->body['und'][0]['safe_value'] = implode("<p>", $ads_array);
+        ?>
+        <div class="post-body"> <?php print render($node->body['und'][0]['safe_value']); ?> </div>
+        <?php
+      }
+    ?>  
+    	<!-- <div class="post-body"> <?php print render($content['body']); ?> </div> -->
      
 	
 <a href="http://hrmasia.com/news" class="single_news-link">Click here for more HRM News</a>
@@ -79,7 +103,9 @@
   
     <?php 
       $path = current_path();
+      global $base_url;
       $path_alias = '/'.drupal_lookup_path('alias',$path);
+
       //$path_alias = 'http://hrmasia.com';
     ?>
     <div class="fb-wrap wrap1">
@@ -116,7 +142,7 @@
     </div>
 
 	<!-- Add pager at the bottom -->
-    <div class="news-pager related-articles">
+    <!-- <div class="news-pager related-articles">
         <ul>
             <li class="views-row-odd">
              <?php 
@@ -130,7 +156,84 @@
               ?></li>
 	
         </ul>
+    </div>  -->
+
+     <?php
+    $arg_nid = arg(1);
+    $suggested_news_array_val = array();
+    $count_nid = 1;
+    $output = '';
+
+    $suggested_news_tid_array = db_query("select DISTINCT ft.field_tags_tid from {node} as n inner join {field_data_field_tags} as ft on n.nid = ft.entity_id where type='news' and status=1 and nid = $arg_nid");
+    $suggested_news_tid = $suggested_news_tid_array->fetchAll();
+    if(isset($suggested_news_tid) && !empty($suggested_news_tid)){
+      foreach ($suggested_news_tid as $tid_key => $tid_value) {
+        $suggested_news_array = db_query("select DISTINCT nid from {node} as n inner join {field_data_field_tags} as ft1 on n.nid = ft1.entity_id where type='news' and status = 1 and nid != $arg_nid and ft1.field_tags_tid = $tid_value->field_tags_tid Order by nid desc Limit 6");
+        $suggested_news = $suggested_news_array->fetchAll();
+        foreach ($suggested_news as $art_key => $art_value) {
+          if (!in_array($art_value->nid, $suggested_news_array_val) && $count_nid < 7){
+            $suggested_news_array_val[] = $art_value->nid;
+          }
+          $count_nid++;
+        } 
+      }
+      
+      foreach ($suggested_news_array_val as $art1_key => $art1_value) {
+        $node_details = node_load($art1_value);
+       
+        $node_url = drupal_get_path_alias('node/'.$art1_value);     
+        if(isset($node_details->field_author_name['und']) && !empty($node_details->field_author_name['und'][0]['uid'])){
+          $author_id = $node_details->field_author_name['und'][0]['uid'];
+          $sql = db_query("SELECT name FROM {users} WHERE uid = '$author_id'");
+          $records = $sql->fetchObject();
+
+          //$author_name = '<a href="'.$base_url.'/users/'.$author_id.'">'.$records->name.'</a>';
+          $author_name = $records->name;
+        }else{
+          $author_name = '';
+        }
+
+        if(isset($node_details->field_date['und']) && !empty($node_details->field_date['und'][0]['value'])){
+          $author_id = $node_details->field_date['und'][0]['value'];
+          $new_date = date('d M Y',strtotime($author_id));
+        }else{
+          $new_date = '';
+        }
+
+        if(isset($node_details->body['und']) && !empty($node_details->body['und'][0]['value'])){
+          $summary = strip_tags(trim($node_details->field_news_summary['und'][0]['value']));
+          $desc = substr($summary, 0, 240);
+        }else{
+          $desc = '';
+        }
+
+        if(isset($node_details->field_image[LANGUAGE_NONE]) && !empty($node_details->field_image[LANGUAGE_NONE])){
+          $imgpath = file_load($node_details->field_image[LANGUAGE_NONE][0]['fid'])->uri;
+          $page_img = file_create_url(image_style_url("feature_list_page__600_400_", $imgpath));
+          $img = '<img src="'.file_create_url($page_img).'"/>';
+        }else{
+          $img = '';
+        }
+      
+        $output.='<div class="views-column"><a class="'.$arrow_class.'" href="'.$base_url.'/'.$node_url.'"><div class="view-field-img">'.$img.'</div>
+               <div class="view-field-title article-title">'.$node_details->title.'</div></a>
+               <div class="created">'.$author_name.' - '.$new_date.'</div>
+               <div class="view-field-body">'.$desc.'</div></div>';
+      }
+    }
+
+    if(!empty($output)){
+  ?>
+    <div class="view-news-list suggested-articles">
+      <div class="view-content">
+         <div class="views-responsive-grid">
+           <div class="views-row ">
+            <?php print $output; ?>
+          </div>
+        </div>
+      </div>
     </div>
+  <?php }?>
 
 
 	<!--
@@ -150,12 +253,14 @@
   
   <?php print render($content['links']); ?>
   <?php //if($user->uid){
-    print render($content['comments']);
+    //print render($content['comments']);
     /*}
     else{
 $link = '/user/login?destination='.$_GET["q"];
       print '<a href="'.$link.'"><img src="http://www.hrmasia.com/sites/default/files/commentbox.jpg"></a>';
 }*/
  ?>
+
+<div class="fb-comments" data-href="<?php print $base_url.$path_alias; ?>" data-numposts="2"></div>
 
 </div>

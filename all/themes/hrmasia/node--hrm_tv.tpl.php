@@ -32,7 +32,33 @@
     <div class="social-share-post content-padding"> <?php print render($share_block['content']); ?> </div>
     <div class="post-image img-responsive"> <?php print render($content['field_image']); ?> </div>
     <div class="post-video"> <?php print render($content['field_video_code']); ?> </div>
-    <div class="post-body content-padding"> <?php print render($content['body']); ?> </div>
+    <!-- <div class="post-body content-padding"> <?php //print render($content['body']); ?> </div> -->
+    <?php   
+
+      if (isset($node->body['und']) && !empty($node->body['und'])) {
+        $ads_array = explode("<p>", $node->body['und'][0]['safe_value']);
+
+        $ad_count = 3;
+        foreach ($ads_array as $key => $value) {
+          if($key % 4 == 0 && $key > 0){
+            /*$ads_array[$key] = $value."<div id='div-gpt-ad-1456419201166-".$ad_count."'>
+                  <script type='text/javascript'>
+                  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1456419201166-".$ad_count."'); });
+                  </script>
+                  </div>";
+                  $ad_count++;*/
+
+            $ads_array[$key] = $value.'<div style ="width:100%"class="mpu-size ad-'.$ad_count.'"><img src="/hrmasia/sites/default/files/field/images/92300732.jpg"></div>';
+                  $ad_count++;
+          }
+        }
+        $node->body['und'][0]['safe_value'] = implode("<p>", $ads_array);
+        ?>
+        <div class="post-body content-padding"> <?php print render($node->body['und'][0]['safe_value']); ?> </div>
+        <?php
+      }
+    ?>  
+
     <div class="related-articles">
     <div class="subscribe-block">
 		<?php
@@ -56,11 +82,62 @@
 	?> 
     </div>
     
-    <div class="disqus-block"> <?php print render($content['disqus']); ?>  </div>
+    <div class="disqus-block"> <?php //print render($content['disqus']); ?>  </div>
     
   </div>
+
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  
+  <?php 
+    $path = current_path();
+    global $base_url;
+    $path_alias = $base_url.'/'.drupal_lookup_path('alias',$path);
+    //$path_alias = 'http://hrmasia.com';
+  ?>
+  <div class="fb-wrap wrap1">
+    <div class="fb-like" data-href="<?php print $path_alias; ?>" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+  </div>
+
+  <!-- Twitter Follow button -->
+  <div class="twitter-wrap wrap1">
+    <a href="https://twitter.com/TwitterDev" class="twitter-follow-button" data-show-count="true">Follow @TwitterDev</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  </div>
+
+   <!-- Link In Follow button -->
+  <div class="linkin-wrap wrap1">
+    <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+    <script type="IN/FollowCompany" data-id="1807878" data-counter="right"></script>
+  </div>
+
+  <!-- Facebook Share button -->
+  <div class="fbshare-wrap wrap1">
+    <div class="fb-share-button" data-href="<?php print $path_alias; ?>" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fhrmasia.com%2F&amp;src=sdkpreparse">Share</a></div>
+  </div>
+
+    <!-- Link in Share button -->
+  <div class="tweet-wrap wrap1">
+    <!-- Tweet Button -->
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="true">Tweet</a>
+    
+    <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+  </div>
+
+  <!-- Link in Share button -->
+  <div class="linkinshare-wrap wrap1">
+    <!-- <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script> -->
+    <script type="IN/Share" data-url="<?php print $path_alias; ?>" data-counter="right"></script>
+  </div>
+
+  <div class="fb-comments" data-href="<?php print $base_url.$path_alias; ?>" data-numposts="2"></div>
   
   <?php print render($content['links']); ?>
-  <?php print render($content['comments']); ?>
+  <?php //print render($content['comments']); ?>
 
 </div>
